@@ -1,0 +1,7 @@
+<resources>
+    <style name="CustomCheckbox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:paddingEnd">8dp</item>
+    </style>
+</resources>
