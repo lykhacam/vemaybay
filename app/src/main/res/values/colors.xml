@@ -3,5 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="clbutton">#710832</color>
-    <color name="cllink">?attr/colorPrimary</color>
+    <color name="cllink">#664FA1</color>
 </resources>
