@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1019857620054",
+    "project_id": "vemaybay-1c84b",
+    "storage_bucket": "vemaybay-1c84b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019857620054:android:09a882f6ce64f1cc1f7ff7",
+        "android_client_info": {
+          "package_name": "com.example.kobietten"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1019857620054-0agq1ec9tbdif79nlk647m2rk1umql1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB369cFkh9_Elj6eFy5_hWybLPwUVArhW4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1019857620054-0agq1ec9tbdif79nlk647m2rk1umql1m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
