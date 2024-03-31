@@ -1,4 +1,4 @@
-package com.example.kobietten.controler;
+package com.example.kobietten.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +11,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.kobietten.R;
-import com.example.kobietten.giaodien.Facilities;
-import com.example.kobietten.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -75,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Login thành công", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(LoginActivity.this, Facilities.class);
+                            Intent intent = new Intent(LoginActivity.this, manhinhchinh.class);
                             startActivity(intent);
                             finish();
                         }

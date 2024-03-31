@@ -1,4 +1,4 @@
-package com.example.kobietten.controler;
+package com.example.kobietten.controller;
 
 import android.os.Bundle;
 import android.view.View;
