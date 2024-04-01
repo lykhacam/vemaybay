@@ -1,5 +1,6 @@
 package com.example.kobietten.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
@@ -29,7 +30,7 @@ public class DiemdenActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("chuyenbay")
+        db.collection("sanbay")
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
@@ -42,5 +43,15 @@ public class DiemdenActivity extends AppCompatActivity {
                         Log.d("Firestore", "Error getting documents: ", task.getException());
                     }
                 });
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            SanBay selectedSanBay = adapter.getItem(position);
+            if (selectedSanBay != null) {
+                Intent returnIntent = new Intent();
+                returnIntent.putExtra("selectedLocation", selectedSanBay.getAirportCode());
+                setResult(RESULT_OK, returnIntent);
+                finish();
+            }
+        });
+
     }
 }

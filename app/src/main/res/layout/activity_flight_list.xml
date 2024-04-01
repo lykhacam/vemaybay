@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#EFEDED"
+    android:weightSum="5">
+
+    <FrameLayout
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/background_gradient"
+        android:gravity="center">
+
+        <!-- TextView cho Login -->
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chuyến bay"
+            android:textSize="32sp"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center_horizontal|bottom"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:paddingBottom="52dp"/>
+
+    </FrameLayout>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"
+        android:scrollbars="vertical"
+        android:padding="8dp"
+        android:layout_marginTop="40dp"
+        android:clipToPadding="false"
+        android:scrollbarStyle="outsideInset"
+        android:fadeScrollbars="false">
+    </ListView>
+</LinearLayout>

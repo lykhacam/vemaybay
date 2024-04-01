@@ -15,7 +15,7 @@
         android:theme="@style/Theme.KoBietTen"
         tools:targetApi="31">
         <activity
-            android:name=".controller.KhoihanhActitvity"
+            android:name=".controller.KhoihanhActivity"
             android:exported="false" />
         <activity
             android:name=".controller.QuenmkActivity"
@@ -28,6 +28,9 @@
             android:exported="false" />
         <activity
             android:name=".controller.DiemdenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.SearchResultsActivity"
             android:exported="false" />
         <activity
             android:name=".controller.manhinhchinh"

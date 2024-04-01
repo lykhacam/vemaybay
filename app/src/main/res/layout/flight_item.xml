@@ -1,0 +1,101 @@
+<!-- flight_item.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/rounded_corner">
+    <!-- Airline logo -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="#DFD6D6"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivAirlineLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_logo" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:paddingStart="8dp">
+
+        <!-- Container for Departure and Arrival -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:weightSum="5"
+            android:gravity="center_vertical">
+
+            <!-- Departure Time -->
+            <TextView
+                android:id="@+id/tvDepartureTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="05:21am"
+                android:textColor="@color/black"
+                android:gravity="end" />
+
+            <!-- Image of an arrow -->
+            <ImageView
+                android:id="@+id/ivArrow"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_arrow" />
+
+            <!-- Arrival Time -->
+            <TextView
+                android:id="@+id/tvArrivalTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="08:43am"
+                android:textColor="@color/black"
+                android:gravity="start" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+
+            android:paddingTop="8dp">
+
+            <!-- Số hiệu chuyến bay -->
+            <TextView
+                android:id="@+id/tvFlightNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="NNS24"
+                android:textColor="#D55151"
+                android:gravity="start"
+                android:layout_marginStart="16dp"/>
+
+            <!-- Giá tiền -->
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="$215"
+                android:textStyle="bold"
+                android:gravity="end"
+                android:layout_marginEnd="20dp"
+                android:textAppearance="?attr/textAppearanceListItem" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

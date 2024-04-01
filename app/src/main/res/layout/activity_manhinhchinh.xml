@@ -9,12 +9,11 @@
     <FrameLayout
         android:id="@+id/top_view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:background="@drawable/background_gradient"
         android:gravity="center">
 
-        <!-- Tiêu đề chính "Chọn chuyến bay" -->
         <TextView
             android:id="@+id/tvLogin"
             android:layout_width="wrap_content"
@@ -37,17 +36,16 @@
             android:textColor="#FFFFFF"
             android:layout_gravity="center_horizontal|bottom"
             android:paddingBottom="20dp"/>
-
     </FrameLayout>
 
-    <!-- Các nút chọn điểm đi và đến -->
+    <!-- LinearLayout chung cho tất cả các nút và phần nhập thông tin -->
     <LinearLayout
-        android:id="@+id/header_section"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:layout_marginTop="16dp">
 
         <!-- Nút điểm đi -->
         <Button
@@ -59,7 +57,7 @@
             android:padding="12dp"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"
-            android:layout_marginTop="10dp"
+            android:layout_marginBottom="16dp"
             android:drawablePadding="8dp"/>
 
         <!-- Nút điểm đến -->
@@ -70,9 +68,9 @@
             android:text="Điểm đến"
             android:drawableEnd="@drawable/ic_map"
             android:padding="12dp"
-            android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"
+            android:layout_marginBottom="16dp"
             android:drawablePadding="8dp"/>
 
         <!-- Nút chọn ngày -->
@@ -81,91 +79,61 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Chọn ngày"
-            android:layout_marginTop="10dp"
-            android:drawablePadding="8dp"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"
-            android:padding="12dp"/>
-    </LinearLayout>
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
+            android:drawablePadding="8dp"/>
 
-    <!-- Phần nhập thông tin hành khách và nút tìm kiếm -->
-    <LinearLayout
-        android:id="@+id/main_content"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
-        android:orientation="vertical"
-        android:padding="16dp">
-
+        <!-- LinearLayout cho "Người lớn" -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="15dp">
+            android:layout_marginBottom="16dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Người lớn"
-                android:textSize="18dp"
-                android:layout_marginEnd="20dp"/>
+                android:textSize="18sp"
+                android:gravity="center_vertical" />
 
             <EditText
                 android:id="@+id/edt_adult"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:inputType="number"
                 android:background="@drawable/edittext_background"
                 android:text="1"
                 android:padding="12dp"/>
         </LinearLayout>
 
+        <!-- LinearLayout cho "Trẻ em" -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="15dp">
+            android:layout_marginBottom="16dp">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:textSize="18dp"
-                android:layout_height="wrap_content"
-                android:text="Người lớn"
-                android:layout_marginEnd="20dp"/>
-
-            <EditText
-                android:id="@+id/edt_adul"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:inputType="number"
-                android:background="@drawable/edittext_background"
-                android:text="1"
-                android:padding="12dp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="15dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18dp"
-                android:text="Người lớn"
-                android:layout_marginEnd="20dp"/>
+                android:text="Trẻ em"
+                android:textSize="18sp"
+                android:gravity="center_vertical" />
 
             <EditText
-                android:id="@+id/edt_adults"
+                android:id="@+id/edt_child"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:inputType="number"
                 android:background="@drawable/edittext_background"
-                android:text="1"
+                android:text="0"
                 android:padding="12dp"/>
         </LinearLayout>
 
@@ -176,8 +144,8 @@
             android:layout_height="wrap_content"
             android:text="Tìm kiếm"
             android:backgroundTint="@color/clbutton"
-            android:layout_marginTop="24dp"
-            android:padding="12dp"/>
-
+            android:padding="12dp"
+            android:layout_marginTop="100dp"/>
     </LinearLayout>
+
 </LinearLayout>
