@@ -24,7 +24,7 @@
             android:name=".controller.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.LoginActivity"
+            android:name=".controller.manhinhchinh"
             android:exported="false" />
         <activity
             android:name=".controller.DiemdenActivity"
@@ -33,7 +33,7 @@
             android:name=".controller.SearchResultsActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.manhinhchinh"
+            android:name=".controller.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
