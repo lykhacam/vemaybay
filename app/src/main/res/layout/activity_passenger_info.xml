@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/btnToggleAdultInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thông tin người lớn" />
+
+    <LinearLayout
+        android:id="@+id/llAdultInfoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <!-- Thêm form người lớn động ở đây -->
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnToggleChildInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thông tin trẻ em" />
+
+    <LinearLayout
+        android:id="@+id/llChildInfoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <!-- Thêm form trẻ em động ở đây -->
+    </LinearLayout>
+
+    <!-- Nút gửi thông tin -->
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gửi thông tin" />
+
+</LinearLayout>

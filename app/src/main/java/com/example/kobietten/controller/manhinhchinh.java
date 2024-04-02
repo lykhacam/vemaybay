@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kobietten.R;
@@ -23,6 +25,7 @@ public class manhinhchinh extends AppCompatActivity {
     private static final int REQUEST_DEPARTURE = 1;
     private static final int REQUEST_DESTINATION = 2;
 
+    private EditText etAdults, etChildren;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,8 @@ public class manhinhchinh extends AppCompatActivity {
         btnDestination = findViewById(R.id.btnDestination);
         btnPickDate = findViewById(R.id.btn_pick_date);
         btnSearch = findViewById(R.id.btn_search_flights);
+        etAdults = findViewById(R.id.edt_adult); // Giả sử bạn có EditText này trong layout của mình
+        etChildren = findViewById(R.id.edt_child); // Giả sử bạn có EditText này trong layout của mình
 
 
 
@@ -104,16 +109,20 @@ public class manhinhchinh extends AppCompatActivity {
         }
     }
     public void searchFlights(View view) {
-        // Lấy thông tin từ các button
+        // Lấy thông tin từ các button và EditText
         String departureCode = btnDeparture.getText().toString();
         String destinationCode = btnDestination.getText().toString();
         String date = btnPickDate.getText().toString();
+        int adults = Integer.parseInt(etAdults.getText().toString()); // Lấy số người lớn từ EditText
+        int children = Integer.parseInt(etChildren.getText().toString()); // Lấy số trẻ em từ EditText
 
         // Khởi chạy SearchResultsActivity với dữ liệu tìm kiếm
         Intent searchIntent = new Intent(manhinhchinh.this, SearchResultsActivity.class);
         searchIntent.putExtra("DEPARTURE_CODE", departureCode);
         searchIntent.putExtra("DESTINATION_CODE", destinationCode);
         searchIntent.putExtra("DATE", date);
+        searchIntent.putExtra("ADULTS_COUNT", adults); // Thêm số lượng người lớn vào intent
+        searchIntent.putExtra("CHILDREN_COUNT", children); // Thêm số lượng trẻ em vào intent
         startActivity(searchIntent);
     }
 }

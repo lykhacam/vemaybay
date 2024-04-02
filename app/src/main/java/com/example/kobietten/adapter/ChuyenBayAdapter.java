@@ -36,7 +36,7 @@ public class ChuyenBayAdapter extends ArrayAdapter<ChuyenBay> {
             tvDepartureTime.setText(chuyenbay.getBatdau());
             tvArrivalTime.setText(chuyenbay.getKetthuc());
             tvFlightNumber.setText(chuyenbay.getTenhang()); // Hoặc số hiệu chuyến bay nếu bạn có trường đó
-            tvPrice.setText(String.format("$%s", chuyenbay.getTienve()));
+            tvPrice.setText(String.format("%,d đ", chuyenbay.getTienve()));
         }
 
         return convertView;

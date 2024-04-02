@@ -24,16 +24,22 @@
             android:name=".controller.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.manhinhchinh"
+            android:name=".controller.SearchResultsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.FlightDetailBottomSheetFragment"
             android:exported="false" />
         <activity
             android:name=".controller.DiemdenActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.SearchResultsActivity"
+            android:name=".controller.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.LoginActivity"
+            android:name=".controller.PassengerInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.manhinhchinh"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -31,6 +31,8 @@ public class SearchResultsActivity extends AppCompatActivity {
         String departureCode = getIntent().getStringExtra("DEPARTURE_CODE");
         String destinationCode = getIntent().getStringExtra("DESTINATION_CODE");
         String date = getIntent().getStringExtra("DATE");
+        int adults = getIntent().getIntExtra("ADULTS_COUNT", 1);
+        int children = getIntent().getIntExtra("CHILDREN_COUNT", 0);
 
         // Thực hiện truy vấn Firebase
         db.collection("chuyenbay")
@@ -49,5 +51,11 @@ public class SearchResultsActivity extends AppCompatActivity {
                         Log.d("Firestore", "Error getting documents: ", task.getException());
                     }
                 });
+
+        lvFlights.setOnItemClickListener((parent, view, position, id) -> {
+            ChuyenBay selectedFlight = flightList.get(position);
+            FlightDetailBottomSheetFragment bottomSheet = FlightDetailBottomSheetFragment.newInstance(selectedFlight, adults, children);
+            bottomSheet.show(getSupportFragmentManager(), "FlightDetailBottomSheetFragment");
+        });
     }
 }

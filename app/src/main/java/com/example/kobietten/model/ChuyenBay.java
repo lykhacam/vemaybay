@@ -1,6 +1,8 @@
 package com.example.kobietten.model;
 
-public class ChuyenBay {
+import java.io.Serializable;
+
+public class ChuyenBay implements Serializable {
     private String batdau;
     private String diemden;
     private String diemdi;
