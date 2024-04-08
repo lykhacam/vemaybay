@@ -2,4 +2,11 @@
     <string name="app_name">KoBietTen</string>
     <string name="default_web_client_id">YOUR_WEB_CLIENT_ID_HERE</string>
 
+    <string-array name="gender_options">
+        <item>Chọn</item>
+        <item>Nam</item>
+        <item>Nữ</item>
+    </string-array>
+
+
 </resources>

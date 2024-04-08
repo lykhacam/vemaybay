@@ -15,13 +15,20 @@ import com.example.kobietten.model.ChuyenBay;
 
 public class FlightDetailBottomSheetFragment extends BottomSheetDialogFragment {
     private static final String ARG_FLIGHT = "flight";
+    private static final String ARG_DIEMDI = "diemDi";
+    private static final String ARG_DIEMDEN = "diemDen";
+    private static final String ARG_NGAYDI = "ngayDi";
+
     private static final String ARG_ADULTS = "soNguoiLon";
     private static final String ARG_CHILDREN = "soTreEm";
 
-    public static FlightDetailBottomSheetFragment newInstance(ChuyenBay chuyenBay, int soNguoiLon, int soTreEm) {
+    public static FlightDetailBottomSheetFragment newInstance(ChuyenBay chuyenBay, String diemDi, String diemDen, String ngayDi, int soNguoiLon, int soTreEm) {
         FlightDetailBottomSheetFragment fragment = new FlightDetailBottomSheetFragment();
         Bundle args = new Bundle();
         args.putSerializable(ARG_FLIGHT, chuyenBay);
+        args.putString(ARG_DIEMDI, diemDi);
+        args.putString(ARG_DIEMDEN, diemDen);
+        args.putString(ARG_NGAYDI, ngayDi);
         args.putInt(ARG_ADULTS, soNguoiLon);
         args.putInt(ARG_CHILDREN, soTreEm);
         fragment.setArguments(args);
@@ -60,6 +67,9 @@ public class FlightDetailBottomSheetFragment extends BottomSheetDialogFragment {
             // Tạo Intent để mở PassengerInfoActivity
             Intent intent = new Intent(getContext(), PassengerInfoActivity.class);
             // Bạn cũng có thể muốn truyền thêm số lượng người lớn và trẻ em tới PassengerInfoActivity
+            intent.putExtra("EXTRA_DIEMDI", getArguments().getString(ARG_DIEMDI));
+            intent.putExtra("EXTRA_DIEMDEN", getArguments().getString(ARG_DIEMDEN));
+            intent.putExtra("EXTRA_NGAYDI", getArguments().getString(ARG_NGAYDI));
             intent.putExtra("EXTRA_ADULTS", soNguoiLon);
             intent.putExtra("EXTRA_CHILDREN", soTreEm);
             startActivity(intent);

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.PaymentActivity">
+
+  <Button
+      android:id="@+id/btnThanhtoan"
+      android:layout_width="249dp"
+      android:layout_height="41dp"
+      android:layout_marginTop="216dp"
+      android:text="Thanh toán"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <Button
+      android:id="@+id/btnHuy"
+      android:layout_width="249dp"
+      android:layout_height="41dp"
+      android:layout_marginTop="60dp"
+      android:text="Hủy"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/btnThanhtoan"
+      tools:layout_editor_absoluteX="98dp" />
+
+  <Button
+      android:id="@+id/btnManhinhchinh"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      android:layout_marginTop="60dp"
+      android:text="Màn hình chính"
+      app:layout_constraintTop_toBottomOf="@+id/btnHuy"
+      tools:layout_editor_absoluteX="169dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

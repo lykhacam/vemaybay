@@ -1,52 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
-
-    <TextView
-        android:id="@+id/tvPassengerTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:drawableEnd="@drawable/ic_expand_more"
-        android:paddingBottom="8dp"
-        android:background="?attr/selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true"
-        android:padding="16dp"
-        android:gravity="center_vertical"
-        android:text="Người lớn 1" />
-
+    android:background="@color/white"
+    android:weightSum="5">
     <LinearLayout
-        android:id="@+id/llPassengerDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:visibility="gone"
-        android:paddingLeft="16dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingRight="16dp">
+        android:padding="16dp">
 
-        <!-- Đặt các trường nhập liệu tại đây -->
-        <EditText
-            android:id="@+id/etPassengerName"
+        <TextView
+            android:id="@+id/tvPassengerTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tên"
-            android:inputType="textPersonName" />
+            android:textSize="18sp"
+            android:drawableEnd="@drawable/ic_expand_more"
+            android:paddingBottom="8dp"
+            android:background="@drawable/border_button"
+            android:clickable="true"
+            android:textColor="@color/white"
+            android:focusable="true"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:text="Người lớn 1" />
 
-        <EditText
-            android:id="@+id/etPassengerAge"
+        <LinearLayout
+            android:id="@+id/llPassengerDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tuổi"
-            android:inputType="number" />
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <!-- Thêm các trường nhập liệu khác theo yêu cầu -->
+            <EditText
+                android:id="@+id/etTen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Họ và tên"
+                android:inputType="textPersonName" />
+
+            <Spinner
+                android:id="@+id/Gioitinh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/gender_options" /> <!-- gender_options là một mảng string được định nghĩa trong res/values/strings.xml -->
+
+            <EditText
+                android:id="@+id/etNgaysinh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ngày sinh"
+                android:focusable="false" />
+
+        </LinearLayout>
 
     </LinearLayout>
-
 </LinearLayout>

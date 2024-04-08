@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF"/> <!-- Replace with your desired color or use @color resource -->
+    <corners
+        android:radius="12dp" /> <!-- Adjust the radius as needed -->
+    <gradient
+        android:startColor="#BD2DCD"
+        android:endColor="@color/clbutton"
+        android:angle="135" />
+</shape>

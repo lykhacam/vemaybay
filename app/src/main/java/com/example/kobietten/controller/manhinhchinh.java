@@ -110,19 +110,19 @@ public class manhinhchinh extends AppCompatActivity {
     }
     public void searchFlights(View view) {
         // Lấy thông tin từ các button và EditText
-        String departureCode = btnDeparture.getText().toString();
-        String destinationCode = btnDestination.getText().toString();
-        String date = btnPickDate.getText().toString();
-        int adults = Integer.parseInt(etAdults.getText().toString()); // Lấy số người lớn từ EditText
-        int children = Integer.parseInt(etChildren.getText().toString()); // Lấy số trẻ em từ EditText
+        String diemdi = btnDeparture.getText().toString();
+        String diemden = btnDestination.getText().toString();
+        String ngaydi = btnPickDate.getText().toString();
+        int nguoilon = Integer.parseInt(etAdults.getText().toString()); // Lấy số người lớn từ EditText
+        int treem = Integer.parseInt(etChildren.getText().toString()); // Lấy số trẻ em từ EditText
 
         // Khởi chạy SearchResultsActivity với dữ liệu tìm kiếm
         Intent searchIntent = new Intent(manhinhchinh.this, SearchResultsActivity.class);
-        searchIntent.putExtra("DEPARTURE_CODE", departureCode);
-        searchIntent.putExtra("DESTINATION_CODE", destinationCode);
-        searchIntent.putExtra("DATE", date);
-        searchIntent.putExtra("ADULTS_COUNT", adults); // Thêm số lượng người lớn vào intent
-        searchIntent.putExtra("CHILDREN_COUNT", children); // Thêm số lượng trẻ em vào intent
+        searchIntent.putExtra("DIEMDI", diemdi);
+        searchIntent.putExtra("DIEMDEN", diemden);
+        searchIntent.putExtra("NGAYDI", ngaydi);
+        searchIntent.putExtra("NGUOILON", nguoilon); // Thêm số lượng người lớn vào intent
+        searchIntent.putExtra("TREEM", treem); // Thêm số lượng trẻ em vào intent
         startActivity(searchIntent);
     }
 }

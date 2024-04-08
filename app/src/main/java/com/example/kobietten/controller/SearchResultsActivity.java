@@ -28,17 +28,17 @@ public class SearchResultsActivity extends AppCompatActivity {
         lvFlights.setAdapter(adapter);
 
         // Lấy dữ liệu từ intent
-        String departureCode = getIntent().getStringExtra("DEPARTURE_CODE");
-        String destinationCode = getIntent().getStringExtra("DESTINATION_CODE");
-        String date = getIntent().getStringExtra("DATE");
-        int adults = getIntent().getIntExtra("ADULTS_COUNT", 1);
-        int children = getIntent().getIntExtra("CHILDREN_COUNT", 0);
+        String diemdi = getIntent().getStringExtra("DIEMDI");
+        String diemden = getIntent().getStringExtra("DIEMDEN");
+        String ngaydi = getIntent().getStringExtra("NGAYDI");
+        int nguoilon = getIntent().getIntExtra("NGUOILON", 1);
+        int treem = getIntent().getIntExtra("TREEM", 0);
 
         // Thực hiện truy vấn Firebase
         db.collection("chuyenbay")
-                .whereEqualTo("diemdi", departureCode)
-                .whereEqualTo("diemden", destinationCode)
-                .whereEqualTo("thoigian", date)
+                .whereEqualTo("diemdi", diemdi)
+                .whereEqualTo("diemden", diemden)
+                .whereEqualTo("thoigian", ngaydi)
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
@@ -54,7 +54,7 @@ public class SearchResultsActivity extends AppCompatActivity {
 
         lvFlights.setOnItemClickListener((parent, view, position, id) -> {
             ChuyenBay selectedFlight = flightList.get(position);
-            FlightDetailBottomSheetFragment bottomSheet = FlightDetailBottomSheetFragment.newInstance(selectedFlight, adults, children);
+            FlightDetailBottomSheetFragment bottomSheet = FlightDetailBottomSheetFragment.newInstance(selectedFlight, diemdi, diemden, ngaydi, nguoilon, treem);
             bottomSheet.show(getSupportFragmentManager(), "FlightDetailBottomSheetFragment");
         });
     }
