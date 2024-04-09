@@ -21,13 +21,13 @@
             android:name=".controller.PaymentActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.KhoihanhActivity"
+            android:name=".controller.DiemdiActivity"
             android:exported="false" />
         <activity
             android:name=".controller.QuenmkActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.RegisterActivity"
+            android:name=".controller.DangkiActivity"
             android:exported="false" />
         <activity
             android:name=".controller.SearchResultsActivity"
@@ -39,14 +39,14 @@
             android:name=".controller.DiemdenActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.manhinhchinh"
+            android:name=".controller.ManhinhchinhActivity"
             android:exported="false" />
         <activity
             android:name=".controller.PassengerInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.LoginActivity"
-            android:exported="true">
+            android:name=".controller.DangnhapActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

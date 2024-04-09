@@ -15,7 +15,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class KhoihanhActivity extends AppCompatActivity {
+public class DiemdiActivity extends AppCompatActivity {
     private ListView listView;
     private SanBayAdapter adapter;
     private List<SanBay> listSanBay = new ArrayList<>();
