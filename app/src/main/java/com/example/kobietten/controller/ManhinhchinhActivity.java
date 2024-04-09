@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,53 +16,53 @@ import com.example.kobietten.R;
 
 import java.util.Calendar;
 
-public class manhinhchinh extends AppCompatActivity {
+public class ManhinhchinhActivity extends AppCompatActivity {
 
-    private Button btnDeparture;
-    private Button btnDestination;
-    private Button btnPickDate, btnSearch;
-    private static final int REQUEST_DEPARTURE = 1;
-    private static final int REQUEST_DESTINATION = 2;
+    private Button btnDiemdi;
+    private Button btnDiemden;
+    private Button btnChonngay, btnTimchuyen;
+    private static final int REQUEST_DIEMDI = 1;
+    private static final int REQUEST_DIEMDEN = 2;
 
-    private EditText etAdults, etChildren;
+    private EditText edtSnl, edtSte;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manhinhchinh); // Đảm bảo đây là tên đúng của layout
+        setContentView(R.layout.activity_manhinhchinh);
 
-        btnDeparture = findViewById(R.id.btnDeparture);
-        btnDestination = findViewById(R.id.btnDestination);
-        btnPickDate = findViewById(R.id.btn_pick_date);
-        btnSearch = findViewById(R.id.btn_search_flights);
-        etAdults = findViewById(R.id.edt_adult); // Giả sử bạn có EditText này trong layout của mình
-        etChildren = findViewById(R.id.edt_child); // Giả sử bạn có EditText này trong layout của mình
+        btnDiemdi = findViewById(R.id.btn_diemdi);
+        btnDiemden = findViewById(R.id.btn_diemden);
+        btnChonngay = findViewById(R.id.btn_chonngay);
+        edtSnl = findViewById(R.id.edt_snguoilon);
+        edtSte = findViewById(R.id.edt_streem);
+        btnTimchuyen = findViewById(R.id.btn_timchuyen);
 
 
 
         // Xử lý nhấn nút Điểm đi
-        btnDeparture.setOnClickListener(v -> openKhoihanhActivity());
+        btnDiemdi.setOnClickListener(v -> openDiemdiActivity());
 
         // Xử lý nhấn nút Điểm đến
-        btnDestination.setOnClickListener(v -> openDiemdenActivity());
+        btnDiemden.setOnClickListener(v -> openDiemdenActivity());
 
         // Xử lý nhấn nút Chọn ngày
-        btnPickDate.setOnClickListener(v -> showDatePickerDialog());
+        btnChonngay.setOnClickListener(v -> showDatePickerDialog());
 
         // Xử lý nhấn nút Tìm kiếm
-        btnSearch.setOnClickListener(view -> searchFlights(view));
+        btnTimchuyen.setOnClickListener(view -> searchFlights(view));
     }
 
 
 
-    private void openKhoihanhActivity() {
-        Intent intent = new Intent(manhinhchinh.this, KhoihanhActivity.class);
-        startActivityForResult(intent, REQUEST_DEPARTURE);
+    private void openDiemdiActivity() {
+        Intent intent = new Intent(ManhinhchinhActivity.this, DiemdiActivity.class);
+        startActivityForResult(intent, REQUEST_DIEMDI);
     }
 
     private void openDiemdenActivity() {
-        Intent intent = new Intent(manhinhchinh.this, DiemdenActivity.class);
-        startActivityForResult(intent, REQUEST_DESTINATION);
+        Intent intent = new Intent(ManhinhchinhActivity.this, DiemdenActivity.class);
+        startActivityForResult(intent, REQUEST_DIEMDEN);
     }
 
     private void showDatePickerDialog() {
@@ -75,11 +74,11 @@ public class manhinhchinh extends AppCompatActivity {
 
         // Tạo mới DatePickerDialog và hiển thị nó
         DatePickerDialog datePickerDialog = new DatePickerDialog(
-                manhinhchinh.this,
+                ManhinhchinhActivity.this,
                 android.R.style.Theme_Material_Light_Dialog_Alert,
                 (view, year1, monthOfYear, dayOfMonth) -> {
                     String selectedDate = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year1;
-                    btnPickDate.setText(selectedDate);
+                    btnChonngay.setText(selectedDate);
                 },
                 year,
                 month,
@@ -99,25 +98,26 @@ public class manhinhchinh extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
-            if (requestCode == REQUEST_DEPARTURE) {
+            if (requestCode == REQUEST_DIEMDI) {
                 String selectedLocation = data.getStringExtra("selectedLocation");
-                btnDeparture.setText(selectedLocation);
-            } else if (requestCode == REQUEST_DESTINATION) {
+                btnDiemdi.setText(selectedLocation);
+            } else if (requestCode == REQUEST_DIEMDEN) {
                 String selectedLocation = data.getStringExtra("selectedLocation");
-                btnDestination.setText(selectedLocation);
+                btnDiemden.setText(selectedLocation);
             }
         }
     }
     public void searchFlights(View view) {
         // Lấy thông tin từ các button và EditText
-        String diemdi = btnDeparture.getText().toString();
-        String diemden = btnDestination.getText().toString();
-        String ngaydi = btnPickDate.getText().toString();
-        int nguoilon = Integer.parseInt(etAdults.getText().toString()); // Lấy số người lớn từ EditText
-        int treem = Integer.parseInt(etChildren.getText().toString()); // Lấy số trẻ em từ EditText
+        String diemdi = btnDiemdi.getText().toString();
+        String diemden = btnDiemden.getText().toString();
+        String ngaydi = btnChonngay.getText().toString();
+        int nguoilon = Integer.parseInt(edtSnl.getText().toString()); // Lấy số người lớn từ EditText
+        int treem = Integer.parseInt(edtSte.getText().toString()); // Lấy số trẻ em từ EditText
 
         // Khởi chạy SearchResultsActivity với dữ liệu tìm kiếm
-        Intent searchIntent = new Intent(manhinhchinh.this, SearchResultsActivity.class);
+        Intent searchIntent = new Intent(ManhinhchinhActivity.this, SearchResultsActivity.class);
+//        them du lieu vao intent de cac layout sau co the su dung
         searchIntent.putExtra("DIEMDI", diemdi);
         searchIntent.putExtra("DIEMDEN", diemden);
         searchIntent.putExtra("NGAYDI", ngaydi);
