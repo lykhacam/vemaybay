@@ -15,27 +15,39 @@
         android:gravity="center">
 
         <TextView
-            android:id="@+id/tvLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chọn chuyến bay"
-            android:textSize="32sp"
-            android:textColor="#FFFFFF"
-            android:layout_gravity="center_horizontal|bottom"
-            android:fontFamily="sans-serif"
-            android:textStyle="bold"
-            android:paddingBottom="52dp"/>
+            android:textColor="@color/white"
+            android:textSize="32dp"
+            android:text="menu"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+            <TextView
+                android:id="@+id/tvLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chọn chuyến bay"
+                android:textSize="32sp"
+                android:textColor="#FFFFFF"
+                android:layout_gravity="center_horizontal|bottom"
+                android:fontFamily="sans-serif"
+                android:textStyle="bold"
+                android:paddingTop="52dp"/>
 
-        <!-- Phụ đề "Hi, welcome back!" -->
-        <TextView
-            android:id="@+id/tvSubtext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hi, welcome back!"
-            android:textSize="18sp"
-            android:textColor="#FFFFFF"
-            android:layout_gravity="center_horizontal|bottom"
-            android:paddingBottom="20dp"/>
+            <!-- Phụ đề "Hi, welcome back!" -->
+            <TextView
+                android:id="@+id/tvSubtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hi, welcome back!"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:layout_gravity="center_horizontal|bottom"
+                android:paddingBottom="20dp"/>
+        </LinearLayout>
     </FrameLayout>
 
     <!-- LinearLayout chung cho tất cả các nút và phần nhập thông tin -->
@@ -49,7 +61,7 @@
 
         <!-- Nút điểm đi -->
         <Button
-            android:id="@+id/btnDeparture"
+            android:id="@+id/btn_diemdi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Điểm đi"
@@ -62,7 +74,7 @@
 
         <!-- Nút điểm đến -->
         <Button
-            android:id="@+id/btnDestination"
+            android:id="@+id/btn_diemden"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Điểm đến"
@@ -75,7 +87,7 @@
 
         <!-- Nút chọn ngày -->
         <Button
-            android:id="@+id/btn_pick_date"
+            android:id="@+id/btn_chonngay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Chọn ngày"
@@ -101,7 +113,7 @@
                 android:gravity="center_vertical" />
 
             <EditText
-                android:id="@+id/edt_adult"
+                android:id="@+id/edt_snguoilon"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -127,7 +139,7 @@
                 android:gravity="center_vertical" />
 
             <EditText
-                android:id="@+id/edt_child"
+                android:id="@+id/edt_streem"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -139,7 +151,7 @@
 
         <!-- Nút tìm kiếm chuyến bay -->
         <Button
-            android:id="@+id/btn_search_flights"
+            android:id="@+id/btn_timchuyen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tìm kiếm"
