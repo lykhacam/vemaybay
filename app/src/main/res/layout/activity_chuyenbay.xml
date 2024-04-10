@@ -13,7 +13,7 @@
         android:gravity="center_vertical">
 
         <TextView
-            android:id="@+id/tvFlightName"
+            android:id="@+id/tv_machuyenbay"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
@@ -22,7 +22,7 @@
             android:textColor="#9F0C0C" />
 
         <TextView
-            android:id="@+id/tvFlightTimes"
+            android:id="@+id/tv_thoigian"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
@@ -44,13 +44,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvTotalPrice"
+                android:id="@+id/tv_tongtien"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Giá: 1,390,000 đ"
                 android:textAppearance="?attr/textAppearanceListItem" />
             <TextView
-                android:id="@+id/tvPriceDetails"
+                android:id="@+id/tv_chitietgia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Xem chi tiết giá"
@@ -58,7 +58,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnBookFlight"
+            android:id="@+id/btn_datve"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Đặt vé"

@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class QuenmkActivity extends AppCompatActivity {
 
     private EditText edtEmail;
-    private Button btnResetPassword;
+    private Button btnQuenmk;
     private FirebaseAuth auth;
 
     @Override
@@ -24,10 +24,10 @@ public class QuenmkActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quenmk); // Set the correct layout name
 
         edtEmail = findViewById(R.id.edt_email);
-        btnResetPassword = findViewById(R.id.btndangnhap);
+        btnQuenmk = findViewById(R.id.btn_qmk);
         auth = FirebaseAuth.getInstance();
 
-        btnResetPassword.setOnClickListener(new View.OnClickListener() {
+        btnQuenmk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = edtEmail.getText().toString().trim();

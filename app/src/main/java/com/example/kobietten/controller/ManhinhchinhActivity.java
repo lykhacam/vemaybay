@@ -38,7 +38,8 @@ public class ManhinhchinhActivity extends AppCompatActivity {
         edtSte = findViewById(R.id.edt_streem);
         btnTimchuyen = findViewById(R.id.btn_timchuyen);
 
-
+        Intent intent = getIntent();
+        String email = intent.getStringExtra("EXTRA_EMAIL");
 
         // Xử lý nhấn nút Điểm đi
         btnDiemdi.setOnClickListener(v -> openDiemdiActivity());
@@ -116,13 +117,13 @@ public class ManhinhchinhActivity extends AppCompatActivity {
         int treem = Integer.parseInt(edtSte.getText().toString()); // Lấy số trẻ em từ EditText
 
         // Khởi chạy SearchResultsActivity với dữ liệu tìm kiếm
-        Intent searchIntent = new Intent(ManhinhchinhActivity.this, SearchResultsActivity.class);
+        Intent searchIntent = new Intent(ManhinhchinhActivity.this, TimchuyenbayActivity.class);
 //        them du lieu vao intent de cac layout sau co the su dung
-        searchIntent.putExtra("DIEMDI", diemdi);
-        searchIntent.putExtra("DIEMDEN", diemden);
-        searchIntent.putExtra("NGAYDI", ngaydi);
-        searchIntent.putExtra("NGUOILON", nguoilon); // Thêm số lượng người lớn vào intent
-        searchIntent.putExtra("TREEM", treem); // Thêm số lượng trẻ em vào intent
+        searchIntent.putExtra("EXTRA_DIEMDI", diemdi);
+        searchIntent.putExtra("EXTRA_DIEMDEN", diemden);
+        searchIntent.putExtra("EXTRA_NGAYDI", ngaydi);
+        searchIntent.putExtra("EXTRA_NGUOILON", nguoilon); // Thêm số lượng người lớn vào intent
+        searchIntent.putExtra("EXTRA_TREEM", treem); // Thêm số lượng trẻ em vào intent
         startActivity(searchIntent);
     }
 }

@@ -1,11 +1,13 @@
 package com.example.kobietten.controller;
 
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.kobietten.R;
 import com.example.kobietten.adapter.ChuyenBayAdapter;
+import com.example.kobietten.controller.Fragment.ThongtinveActivity;
 import com.example.kobietten.model.ChuyenBay;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -13,8 +15,9 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchResultsActivity extends AppCompatActivity {
+public class TimchuyenbayActivity extends AppCompatActivity {
     private ListView lvFlights;
+    private TextView tvKochuyen;
     private ChuyenBayAdapter adapter;
     private List<ChuyenBay> flightList = new ArrayList<>();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -22,17 +25,18 @@ public class SearchResultsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_flight_list);
+        setContentView(R.layout.activity_dschuyen);
         lvFlights = findViewById(R.id.listView);
+        tvKochuyen = findViewById(R.id.tv_kochuyen); // Thêm tham chiếu đến TextView mới
         adapter = new ChuyenBayAdapter(this, flightList);
         lvFlights.setAdapter(adapter);
 
         // Lấy dữ liệu từ intent
-        String diemdi = getIntent().getStringExtra("DIEMDI");
-        String diemden = getIntent().getStringExtra("DIEMDEN");
-        String ngaydi = getIntent().getStringExtra("NGAYDI");
-        int nguoilon = getIntent().getIntExtra("NGUOILON", 1);
-        int treem = getIntent().getIntExtra("TREEM", 0);
+        String diemdi = getIntent().getStringExtra("EXTRA_DIEMDI");
+        String diemden = getIntent().getStringExtra("EXTRA_DIEMDEN");
+        String ngaydi = getIntent().getStringExtra("EXTRA_NGAYDI");
+        int nguoilon = getIntent().getIntExtra("EXTRA_NGUOILON", 1);
+        int treem = getIntent().getIntExtra("EXTRA_TREEM", 0);
 
         // Thực hiện truy vấn Firebase
         db.collection("chuyenbay")
@@ -41,21 +45,23 @@ public class SearchResultsActivity extends AppCompatActivity {
                 .whereEqualTo("thoigian", ngaydi)
                 .get()
                 .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
+                    if (task.isSuccessful() && task.getResult() != null && !task.getResult().isEmpty()) {
+                        flightList.clear(); // Xóa danh sách hiện tại trước khi thêm mới
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             ChuyenBay flight = document.toObject(ChuyenBay.class);
                             flightList.add(flight);
                         }
                         adapter.notifyDataSetChanged();
+                        tvKochuyen.setVisibility(View.GONE); // Ẩn TextView khi có dữ liệu
                     } else {
-                        Log.d("Firestore", "Error getting documents: ", task.getException());
+                        tvKochuyen.setVisibility(View.VISIBLE); // Hiển thị TextView khi không có dữ liệu
                     }
                 });
 
         lvFlights.setOnItemClickListener((parent, view, position, id) -> {
             ChuyenBay selectedFlight = flightList.get(position);
-            FlightDetailBottomSheetFragment bottomSheet = FlightDetailBottomSheetFragment.newInstance(selectedFlight, diemdi, diemden, ngaydi, nguoilon, treem);
-            bottomSheet.show(getSupportFragmentManager(), "FlightDetailBottomSheetFragment");
+            ThongtinveActivity bottomSheet = ThongtinveActivity.newInstance(selectedFlight, diemdi, diemden, ngaydi, nguoilon, treem);
+            bottomSheet.show(getSupportFragmentManager(), "ThongtinveFragment");
         });
     }
 }

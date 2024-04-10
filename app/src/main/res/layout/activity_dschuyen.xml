@@ -16,7 +16,6 @@
 
         <!-- TextView cho Login -->
         <TextView
-            android:id="@+id/tvLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Chuyến bay"
@@ -43,4 +42,16 @@
         android:scrollbarStyle="outsideInset"
         android:fadeScrollbars="false">
     </ListView>
+    <TextView
+        android:id="@+id/tv_kochuyen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Không có chuyến bay"
+        android:gravity="center"
+        android:textColor="#DA8484"
+        android:textSize="32dp"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:layout_marginTop="200dp"/>
+
 </LinearLayout>

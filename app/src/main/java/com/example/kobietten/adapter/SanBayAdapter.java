@@ -19,12 +19,12 @@ public class SanBayAdapter extends ArrayAdapter<SanBay> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.airport_item, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_sanbay, parent, false);
         }
         SanBay sanBay = getItem(position);
 
-        TextView tvTenSanBay = convertView.findViewById(R.id.tvTenSanBay);
-        TextView tvMaSanBay = convertView.findViewById(R.id.tvMaSanBay);
+        TextView tvTenSanBay = convertView.findViewById(R.id.tv_tensanbay);
+        TextView tvMaSanBay = convertView.findViewById(R.id.tv_masanbay);
 
         if (sanBay != null) {
             tvTenSanBay.setText(sanBay.getCityName());

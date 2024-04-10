@@ -2,7 +2,6 @@ package com.example.kobietten.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -17,7 +16,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PaymentActivity extends AppCompatActivity {
+public class ThanhtoanActivity extends AppCompatActivity {
     // Khai báo DatabaseReference
     private DatabaseReference mDatabase;
 
@@ -53,7 +52,7 @@ public class PaymentActivity extends AppCompatActivity {
         bookingData.put("Liên hệ/Email", email);
         bookingData.put("Chuyến bay/Điểm đi", diemDi);
         bookingData.put("Chuyến bay/Điểm đến", diemDen);
-        bookingData.put("Chuyến bay/Ngày đi", ngayDi);
+        bookingData.put("Ngày đi", ngayDi);
 
         // Lặp qua danh sách khách hàng và thêm vào bookingData
         Map<String, Object> customerData = new HashMap<>();
@@ -68,12 +67,12 @@ public class PaymentActivity extends AppCompatActivity {
         mDatabase.child("Đặt vé").child(bookingId).updateChildren(bookingData)
                 .addOnSuccessListener(aVoid -> {
                     // Xử lý thành công, chuyển về màn hình chính hoặc hiển thị thông báo
-                    Toast.makeText(PaymentActivity.this, "Thanh toán thành công!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ThanhtoanActivity.this, "Thanh toán thành công!", Toast.LENGTH_LONG).show();
                     // Chuyển hướng người dùng về màn hình chính hoặc thông báo
                 })
                 .addOnFailureListener(e -> {
                     // Xử lý thất bại, hiển thị thông báo lỗi
-                    Toast.makeText(PaymentActivity.this, "Thanh toán thất bại: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(ThanhtoanActivity.this, "Thanh toán thất bại: " + e.getMessage(), Toast.LENGTH_LONG).show();
                 });
     }
 }
