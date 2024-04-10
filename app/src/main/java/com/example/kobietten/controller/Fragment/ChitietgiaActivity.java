@@ -17,7 +17,6 @@ import com.example.kobietten.R;
 public class ChitietgiaActivity extends BottomSheetDialogFragment {
 
     public ChitietgiaActivity() {
-        // Constructor mặc định
     }
     public static ChitietgiaActivity newInstance(int soNguoiLon, int soTreEm, int giaVe) {
         ChitietgiaActivity fragment = new ChitietgiaActivity();

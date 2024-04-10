@@ -31,7 +31,6 @@ public class ChuyenBayAdapter extends ArrayAdapter<ChuyenBay> {
         TextView tvMachuyenbay = convertView.findViewById(R.id.tv_machuyenbay);
         TextView tvGiatien = convertView.findViewById(R.id.tv_giatien);
 
-        // Điền dữ liệu vào các TextView (hoặc bất kỳ view nào khác trong layout của bạn)
         if (chuyenbay != null) {
             tvTgdi.setText(chuyenbay.getBatdau());
             tvTgden.setText(chuyenbay.getKetthuc());
