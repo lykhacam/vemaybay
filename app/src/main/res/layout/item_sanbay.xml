@@ -6,7 +6,7 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/tvTenSanBay"
+        android:id="@+id/tv_tensanbay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/ic_map"
@@ -16,7 +16,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tvMaSanBay"
+        android:id="@+id/tv_masanbay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="mã sb"

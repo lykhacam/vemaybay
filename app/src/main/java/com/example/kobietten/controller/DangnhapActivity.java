@@ -74,8 +74,8 @@ public class DangnhapActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(DangnhapActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(DangnhapActivity.this, ManhinhchinhActivity.class);
+                            intent.putExtra("EXTRA_EMAIL", email);
                             startActivity(intent);
-                            finish();
                         }
                         else{
                             Toast.makeText(DangnhapActivity.this, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();

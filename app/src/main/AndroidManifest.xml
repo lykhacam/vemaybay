@@ -18,7 +18,7 @@
             android:name=".controller.ThanhToan_activity"
             android:exported="false" />
         <activity
-            android:name=".controller.PaymentActivity"
+            android:name=".controller.ThanhtoanActivity"
             android:exported="false" />
         <activity
             android:name=".controller.DiemdiActivity"
@@ -30,10 +30,10 @@
             android:name=".controller.DangkiActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.SearchResultsActivity"
+            android:name=".controller.TimchuyenbayActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.FlightDetailBottomSheetFragment"
+            android:name=".controller.Fragment.ThongtinveActivity"
             android:exported="false" />
         <activity
             android:name=".controller.DiemdenActivity"
@@ -42,7 +42,7 @@
             android:name=".controller.ManhinhchinhActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.PassengerInfoActivity"
+            android:name=".controller.ThongtinkhActivity"
             android:exported="false" />
         <activity
             android:name=".controller.DangnhapActivity"

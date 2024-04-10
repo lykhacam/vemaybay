@@ -9,7 +9,7 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/btnDatve"
+        android:layout_above="@id/btn_datve"
         android:paddingBottom="16dp">
 
         <LinearLayout
@@ -33,14 +33,14 @@
                 android:padding="20dp">
 
                 <TextView
-                    android:id="@+id/tvNguoilon"
+                    android:id="@+id/tv_nguoilon"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="1 người lớn x 1,390,000 đ" />
 
                 <TextView
-                    android:id="@+id/tvTienNgL"
+                    android:id="@+id/tv_tiennl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="end"
@@ -54,13 +54,13 @@
                 android:padding="20dp">
 
                 <TextView
-                    android:id="@+id/tvTreem"
+                    android:id="@+id/tv_treem"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1 trẻ em x 1,390,000 đ" />
 
                 <TextView
-                    android:id="@+id/tvTienTE"
+                    android:id="@+id/tv_tiente"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="end"
@@ -91,7 +91,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/tvTongtien"
+                    android:id="@+id/tv_tongtien"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="end"
@@ -103,7 +103,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/btnDatve"
+        android:id="@+id/btn_datve"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

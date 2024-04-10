@@ -12,7 +12,7 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/tvPassengerTitle"
+            android:id="@+id/tv_tieudenhap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18sp"
@@ -27,27 +27,27 @@
             android:text="Người lớn 1" />
 
         <LinearLayout
-            android:id="@+id/llPassengerDetails"
+            android:id="@+id/ll_nhapttkh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
 
             <EditText
-                android:id="@+id/etTen"
+                android:id="@+id/edt_ten"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Họ và tên"
                 android:inputType="textPersonName" />
 
             <Spinner
-                android:id="@+id/Gioitinh"
+                android:id="@+id/gioitinh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:entries="@array/gender_options" /> <!-- gender_options là một mảng string được định nghĩa trong res/values/strings.xml -->
 
             <EditText
-                android:id="@+id/etNgaysinh"
+                android:id="@+id/edt_ngaysinh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Ngày sinh"
