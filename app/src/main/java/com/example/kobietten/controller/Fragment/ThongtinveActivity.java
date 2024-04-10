@@ -67,7 +67,6 @@ public class ThongtinveActivity extends BottomSheetDialogFragment {
         btnDatve.setOnClickListener(v -> {
             // Tạo Intent để mở PassengerInfoActivity
             Intent intent = new Intent(getContext(), ThongtinkhActivity.class);
-            // Truyền thêm số lượng người lớn và trẻ em tới PassengerInfoActivity
             intent.putExtra("EXTRA_DIEMDI", getArguments().getString(ARG_DIEMDI));
             intent.putExtra("EXTRA_DIEMDEN", getArguments().getString(ARG_DIEMDEN));
             intent.putExtra("EXTRA_NGAYDI", getArguments().getString(ARG_NGAYDI));
