@@ -9,15 +9,17 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kobietten.R;
+import com.example.kobietten.controller.Fragment.HotroActivity;
 
 import java.util.Calendar;
 
 public class ManhinhchinhActivity extends AppCompatActivity {
-
+    TextView tv_menu;
     private Button btnDiemdi;
     private Button btnDiemden;
     private Button btnChonngay, btnTimchuyen;
@@ -30,13 +32,21 @@ public class ManhinhchinhActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manhinhchinh);
-
+        tv_menu = findViewById(R.id.tv_menu);
         btnDiemdi = findViewById(R.id.btn_diemdi);
         btnDiemden = findViewById(R.id.btn_diemden);
         btnChonngay = findViewById(R.id.btn_chonngay);
         edtSnl = findViewById(R.id.edt_snguoilon);
         edtSte = findViewById(R.id.edt_streem);
         btnTimchuyen = findViewById(R.id.btn_timchuyen);
+
+        tv_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ManhinhchinhActivity.this, HotroActivity.class);
+                startActivity(intent);
+            }
+        });
 
         Intent intent = getIntent();
         String email = intent.getStringExtra("EXTRA_EMAIL");

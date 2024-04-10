@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="clbutton">#710832</color>
     <color name="cllink">#664FA1</color>
+    <color name="gray">#D59898</color>
 </resources>

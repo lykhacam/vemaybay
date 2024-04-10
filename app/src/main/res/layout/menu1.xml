@@ -37,6 +37,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/drawer_menu" /> <!-- Menu items for the drawer -->
+        /> <!-- Menu items for the drawer -->
 
 </androidx.drawerlayout.widget.DrawerLayout>

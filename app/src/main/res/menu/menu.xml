@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/nav_Datve"
+            android:title="@string/nav_Datve"
+            android:icon="@drawable/airplane" />
+        <item android:id="@+id/nav_Lichsu"
+            android:title="@string/nav_Lichsu"
+            android:icon="@drawable/history" />
+
+        <item android:id="@+id/nav_Baomat"
+            android:title="@string/nav_Baomat"
+            android:icon="@drawable/shield" />
+
+        <item android:id="@+id/nav_CSKH"
+            android:title="@string/nav_CSKH"
+            android:icon="@drawable/ic_takecare" />
+
+        <item android:id="@+id/nav_Dangxuat"
+            android:title="@string/nav_Dangxuat"
+            android:icon="@drawable/exit" />
+
+    </group>
+
+
+</menu>
