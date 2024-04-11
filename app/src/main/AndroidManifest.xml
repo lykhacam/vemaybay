@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,7 +13,13 @@
         android:roundIcon="@drawable/iconapp"
         android:supportsRtl="true"
         android:theme="@style/Theme.KoBietTen"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".controller.CskhActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.ThanhToan_activity"
+            android:exported="false" />
         <activity
             android:name=".controller.ThanhtoanActivity"
             android:exported="false" />
@@ -36,20 +42,20 @@
             android:name=".controller.DiemdenActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.ManhinhchinhActivity"
-            android:exported="false" />
-        <activity
-            android:name=".controller.ThongtinkhActivity"
-            android:exported="false" />
-        <activity
             android:name=".controller.DangnhapActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".controller.ThongtinkhActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.ManhinhchinhActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

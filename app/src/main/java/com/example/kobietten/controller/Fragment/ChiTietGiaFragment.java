@@ -59,6 +59,7 @@ public class ChiTietGiaFragment extends BottomSheetDialogFragment {
 
 
         btnDatve.setOnClickListener(v -> {
+
             // Tạo Intent để mở PassengerInfoActivity
             Intent intent = new Intent(getContext(), ThongtinkhActivity.class);
 
