@@ -1,11 +1,15 @@
 <resources>
     <string name="app_name">KoBietTen</string>
     <string name="default_web_client_id">YOUR_WEB_CLIENT_ID_HERE</string>
+    <string name="hint_diemdi">Chọn điểm đi</string>
+    <string name="hint_diemden">Chọn điểm đến</string>
+    <string name="hint_ngaydi">Chọn ngày đi</string>
 
     <string-array name="gender_options">
         <item>Chọn</item>
         <item>Nam</item>
         <item>Nữ</item>
     </string-array>
+
 
 </resources>

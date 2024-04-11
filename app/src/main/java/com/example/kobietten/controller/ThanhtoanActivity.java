@@ -2,7 +2,9 @@ package com.example.kobietten.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,9 +39,29 @@ public class ThanhtoanActivity extends AppCompatActivity {
         String email = intent.getStringExtra("PUT_EMAIL");
         ArrayList<KhachHang> danhSachKhachHang = (ArrayList<KhachHang>) intent.getSerializableExtra("EXTRA_DANH_SACH_KHACH_HANG");
 
+        TextView tvFlightName = findViewById(R.id.tvFlightName);
+        TextView tvFlightNumber = findViewById(R.id.tvFlightNumber);
+        TextView tvUsername = findViewById(R.id.tvUsername);
+        TextView tvDepartureTime = findViewById(R.id.tvDepartureTime);
+
+        tvFlightName.setText("VietnameAirline");
+        tvFlightNumber.setText("VNA");
+        tvUsername.setText(email);
+        tvDepartureTime.setText(ngayDi);
+
+
         // Xử lý sự kiện nhấn nút thanh toán
-        Button btnThanhToan = findViewById(R.id.btnThanhtoan);
+        Button btnThanhToan = findViewById(R.id.btnthanhtoan);
+        Button btnHuy = findViewById(R.id.btnhuy);
+
         btnThanhToan.setOnClickListener(v -> thanhToan(diemDi, diemDen, ngayDi, dienThoai, email, danhSachKhachHang));
+        btnHuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ThanhtoanActivity.this, ThongtinkhActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void thanhToan(String diemDi, String diemDen, String ngayDi, String dienThoai, String email, ArrayList<KhachHang> danhSachKhachHang) {
@@ -48,19 +70,19 @@ public class ThanhtoanActivity extends AppCompatActivity {
 
         // Tạo cấu trúc lưu trữ dữ liệu
         Map<String, Object> bookingData = new HashMap<>();
-        bookingData.put("Ngày/Ngày đi", ngayDi);
-        bookingData.put("Liên hệ/Số điện thoại", dienThoai);
-        bookingData.put("Liên hệ/Email", email);
-        bookingData.put("Chuyến bay/Điểm đi", diemDi);
-        bookingData.put("Chuyến bay/Điểm đến", diemDen);
+        bookingData.put("lienhe/sodienthoai", dienThoai);
+        bookingData.put("lienhe/email", email);
+        bookingData.put("chuyenbay/diemdi", diemDi);
+        bookingData.put("chuyenbay/diemden", diemDen);
+        bookingData.put("ngay/ngaydi", ngayDi);
 
         // Lặp qua danh sách khách hàng và thêm vào bookingData
         Map<String, Object> customerData = new HashMap<>();
         for (int i = 0; i < danhSachKhachHang.size(); i++) {
             KhachHang khachHang = danhSachKhachHang.get(i);
-            customerData.put("Khách hàng_" + i+1, khachHang.toMap());
+            customerData.put("khachhang_" + (i+1), khachHang.toMap());
         }
-        bookingData.put("Khách hàng", customerData);
+        bookingData.put("khachhang", customerData);
 
         // Lưu dữ liệu vào Firebase
         assert bookingId != null;
@@ -68,11 +90,13 @@ public class ThanhtoanActivity extends AppCompatActivity {
                 .addOnSuccessListener(aVoid -> {
                     // Xử lý thành công, chuyển về màn hình chính hoặc hiển thị thông báo
                     Toast.makeText(ThanhtoanActivity.this, "Thanh toán thành công!", Toast.LENGTH_LONG).show();
-                    // Chuyển hướng người dùng về màn hình chính hoặc thông báo
+                    Intent intent = new Intent(ThanhtoanActivity.this, ManhinhchinhActivity.class);
+                    startActivity(intent);
                 })
                 .addOnFailureListener(e -> {
                     // Xử lý thất bại, hiển thị thông báo lỗi
                     Toast.makeText(ThanhtoanActivity.this, "Thanh toán thất bại: " + e.getMessage(), Toast.LENGTH_LONG).show();
                 });
     }
+
 }

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,9 +22,9 @@ public class ManhinhchinhActivity extends AppCompatActivity {
     private Button btnDiemdi;
     private Button btnDiemden;
     private Button btnChonngay, btnTimchuyen;
+    private String email;
     private static final int REQUEST_DIEMDI = 1;
     private static final int REQUEST_DIEMDEN = 2;
-
     private EditText edtSnl, edtSte;
 
     @Override
@@ -39,7 +40,7 @@ public class ManhinhchinhActivity extends AppCompatActivity {
         btnTimchuyen = findViewById(R.id.btn_timchuyen);
 
         Intent intent = getIntent();
-        String email = intent.getStringExtra("EXTRA_EMAIL");
+        email = intent.getStringExtra("EXTRA_EMAIL");
 
         // Xử lý nhấn nút Điểm đi
         btnDiemdi.setOnClickListener(v -> openDiemdiActivity());
@@ -109,21 +110,52 @@ public class ManhinhchinhActivity extends AppCompatActivity {
         }
     }
     public void searchFlights(View view) {
-        // Lấy thông tin từ các button và EditText
+        // Lấy thông tin từ các EditText và Button
         String diemdi = btnDiemdi.getText().toString();
         String diemden = btnDiemden.getText().toString();
         String ngaydi = btnChonngay.getText().toString();
-        int nguoilon = Integer.parseInt(edtSnl.getText().toString()); // Lấy số người lớn từ EditText
-        int treem = Integer.parseInt(edtSte.getText().toString()); // Lấy số trẻ em từ EditText
+        String soNguoiLon = edtSnl.getText().toString();
+        String soTreEm = edtSte.getText().toString();
 
-        // Khởi chạy SearchResultsActivity với dữ liệu tìm kiếm
+        // Kiểm tra xem người dùng có nhập số người lớn và trẻ em không
+        if (soNguoiLon.isEmpty() || soTreEm.isEmpty()) {
+            Toast.makeText(this, "Bạn cần nhập số lượng người lớn và trẻ em.", Toast.LENGTH_LONG).show();
+            return; // Dừng hàm nếu thông tin chưa được nhập
+        }
+
+        int nguoilon, treem;
+        try {
+            nguoilon = Integer.parseInt(soNguoiLon); // Lấy số người lớn từ EditText
+            treem = Integer.parseInt(soTreEm); // Lấy số trẻ em từ EditText
+        } catch (NumberFormatException e) {
+            Toast.makeText(this, "Số lượng người lớn và trẻ em phải là số hợp lệ.", Toast.LENGTH_LONG).show();
+            return; // Dừng hàm nếu có lỗi khi chuyển đổi sang số
+        }
+
+        // Kiểm tra xem người dùng đã chọn điểm đi, điểm đến và ngày đi chưa
+        boolean diemdiChuaChon = diemdi.equals(getString(R.string.hint_diemdi));
+        boolean diemdenChuaChon = diemden.equals(getString(R.string.hint_diemden));
+        boolean ngaydiChuaChon = ngaydi.equals(getString(R.string.hint_ngaydi));
+
+        if (diemdiChuaChon || diemdenChuaChon || ngaydiChuaChon) {
+            String message = "Bạn cần chọn ";
+            if (diemdiChuaChon) message += "điểm đi, ";
+            if (diemdenChuaChon) message += "điểm đến, ";
+            if (ngaydiChuaChon) message += "ngày đi.";
+            message = message.substring(0, message.length() - 2) + ".";
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+            return; // Dừng hàm nếu thông tin chưa được chọn
+        }
+
+        // Nếu tất cả thông tin đã được nhập, tiếp tục với việc khởi chạy Activity mới
         Intent searchIntent = new Intent(ManhinhchinhActivity.this, TimchuyenbayActivity.class);
-//        them du lieu vao intent de cac layout sau co the su dung
         searchIntent.putExtra("EXTRA_DIEMDI", diemdi);
         searchIntent.putExtra("EXTRA_DIEMDEN", diemden);
         searchIntent.putExtra("EXTRA_NGAYDI", ngaydi);
-        searchIntent.putExtra("EXTRA_NGUOILON", nguoilon); // Thêm số lượng người lớn vào intent
-        searchIntent.putExtra("EXTRA_TREEM", treem); // Thêm số lượng trẻ em vào intent
+        searchIntent.putExtra("EXTRA_NGUOILON", nguoilon);
+        searchIntent.putExtra("EXTRA_TREEM", treem);
+        searchIntent.putExtra("EXTRA_EMAIL", email);
         startActivity(searchIntent);
     }
+
 }

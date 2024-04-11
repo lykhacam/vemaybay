@@ -58,7 +58,7 @@
             android:id="@+id/btn_diemdi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Điểm đi"
+            android:hint="@string/hint_diemdi"
             android:drawableEnd="@drawable/ic_map"
             android:padding="12dp"
             android:backgroundTint="@color/white"
@@ -71,7 +71,7 @@
             android:id="@+id/btn_diemden"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Điểm đến"
+            android:hint="@string/hint_diemden"
             android:drawableEnd="@drawable/ic_map"
             android:padding="12dp"
             android:backgroundTint="@color/white"
@@ -84,7 +84,7 @@
             android:id="@+id/btn_chonngay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Chọn ngày"
+            android:hint="@string/hint_ngaydi"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"
             android:padding="12dp"
@@ -153,15 +153,6 @@
             android:padding="12dp"
             android:layout_marginTop="50dp"/>
 
-        <TextView
-            android:id="@+id/tv_lichsu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Lịch sử đặt vé"
-
-            android:textColor="#126DCD"
-            android:padding="12dp"
-            android:layout_marginTop="50dp"/>
     </LinearLayout>
 
 </LinearLayout>
