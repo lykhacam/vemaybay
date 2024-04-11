@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <TextView
+        android:id="@+id/tvNgayDi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ngày đi: "/>
+
+
+    <TextView
+        android:id="@+id/tvDiemDi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Điểm đi: "/>
+
+    <TextView
+        android:id="@+id/tvDiemDen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Điểm đến: "/>
+
+
+    <TextView
+        android:id="@+id/tvTgdi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thời gian đi: "/>
+
+
+</LinearLayout>

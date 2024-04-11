@@ -14,13 +14,6 @@
         android:background="@drawable/background_gradient"
         android:gravity="center">
 
-        <TextView
-            android:id="@+id/tv_menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="32dp"
-            android:text="menu"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -158,7 +151,17 @@
             android:text="Tìm kiếm"
             android:backgroundTint="@color/clbutton"
             android:padding="12dp"
-            android:layout_marginTop="100dp"/>
+            android:layout_marginTop="50dp"/>
+
+        <TextView
+            android:id="@+id/tv_lichsu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lịch sử đặt vé"
+
+            android:textColor="#126DCD"
+            android:padding="12dp"
+            android:layout_marginTop="50dp"/>
     </LinearLayout>
 
 </LinearLayout>

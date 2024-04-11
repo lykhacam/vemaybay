@@ -40,7 +40,6 @@ public class ChitietgiaActivity extends BottomSheetDialogFragment {
         int giaVe = getArguments().getInt("giaVe");
 
         // Cập nhật thông tin chi tiết giá vé
-        // Ví dụ: Hiển thị số lượng và giá vé
         TextView tvSoNguoiLon = view.findViewById(R.id.tv_nguoilon);
         TextView tvSoTreEm = view.findViewById(R.id.tv_treem);
         TextView tvTienNL = view.findViewById(R.id.tv_tiennl);
