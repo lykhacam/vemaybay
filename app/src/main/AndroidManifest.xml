@@ -40,18 +40,19 @@
             android:exported="false" />
         <activity
             android:name=".controller.ManhinhchinhActivity"
-            android:exported="false" />
-        <activity
-            android:name=".controller.ThongtinkhActivity"
-            android:exported="false" />
-        <activity
-            android:name=".controller.DangnhapActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".controller.ThongtinkhActivity"
+            android:exported="false" />
+        <activity
+            android:name=".controller.DangnhapActivity"
+            android:exported="false" >
         </activity>
     </application>
 

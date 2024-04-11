@@ -1,158 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/drawlayout"
     android:background="#EFEDED"
     android:weightSum="5">
 
-    <FrameLayout
-        android:id="@+id/top_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@drawable/background_gradient"
-        android:gravity="center">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center">
-            <TextView
-                android:id="@+id/tvLogin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Chọn chuyến bay"
-                android:textSize="32sp"
-                android:textColor="#FFFFFF"
-                android:layout_gravity="center_horizontal|bottom"
-                android:fontFamily="sans-serif"
-                android:textStyle="bold"
-                android:paddingTop="52dp"/>
-
-            <!-- Phụ đề "Hi, welcome back!" -->
-            <TextView
-                android:id="@+id/tvSubtext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hi, welcome back!"
-                android:textSize="18sp"
-                android:textColor="#FFFFFF"
-                android:layout_gravity="center_horizontal|bottom"
-                android:paddingBottom="20dp"/>
-        </LinearLayout>
-    </FrameLayout>
-
-    <!-- LinearLayout chung cho tất cả các nút và phần nhập thông tin -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="4"
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:layout_marginTop="16dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/toolbar_home">
 
-        <!-- Nút điểm đi -->
-        <Button
-            android:id="@+id/btn_diemdi"
+        </include>
+
+        <FrameLayout
+            android:id="@+id/top_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hint_diemdi"
-            android:drawableEnd="@drawable/ic_map"
-            android:padding="12dp"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/black"
-            android:layout_marginBottom="16dp"
-            android:drawablePadding="8dp"/>
+            android:layout_weight="1"
+            android:background="@drawable/background_gradient"
+            android:gravity="center">
 
-        <!-- Nút điểm đến -->
-        <Button
-            android:id="@+id/btn_diemden"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_diemden"
-            android:drawableEnd="@drawable/ic_map"
-            android:padding="12dp"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/black"
-            android:layout_marginBottom="16dp"
-            android:drawablePadding="8dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+                <TextView
+                    android:id="@+id/tvLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chọn chuyến bay"
+                    android:textSize="32sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold"
+                    android:paddingTop="52dp"/>
 
-        <!-- Nút chọn ngày -->
-        <Button
-            android:id="@+id/btn_chonngay"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_ngaydi"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/black"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"
-            android:drawablePadding="8dp"/>
+                <!-- Phụ đề "Hi, welcome back!" -->
+                <TextView
+                    android:id="@+id/tvSubtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hi, welcome back!"
+                    android:textSize="18sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:paddingBottom="20dp"/>
+            </LinearLayout>
+        </FrameLayout>
 
-        <!-- LinearLayout cho "Người lớn" -->
+        <!-- LinearLayout chung cho tất cả các nút và phần nhập thông tin -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="16dp">
+            android:layout_weight="4"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginTop="16dp">
 
-            <TextView
-                android:layout_width="0dp"
+            <!-- Nút điểm đi -->
+            <Button
+                android:id="@+id/btn_diemdi"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Người lớn"
-                android:textSize="18sp"
-                android:gravity="center_vertical" />
+                android:hint="@string/hint_diemdi"
+                android:drawableEnd="@drawable/ic_map"
+                android:padding="12dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:layout_marginBottom="16dp"
+                android:drawablePadding="8dp"/>
 
-            <EditText
-                android:id="@+id/edt_snguoilon"
-                android:layout_width="0dp"
+            <!-- Nút điểm đến -->
+            <Button
+                android:id="@+id/btn_diemden"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:inputType="number"
-                android:background="@drawable/edittext_background"
-                android:text="1"
-                android:padding="12dp"/>
+                android:hint="@string/hint_diemden"
+                android:drawableEnd="@drawable/ic_map"
+                android:padding="12dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:layout_marginBottom="16dp"
+                android:drawablePadding="8dp"/>
+
+            <!-- Nút chọn ngày -->
+            <Button
+                android:id="@+id/btn_chonngay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_ngaydi"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:drawablePadding="8dp"/>
+
+            <!-- LinearLayout cho "Người lớn" -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Người lớn"
+                    android:textSize="18sp"
+                    android:gravity="center_vertical" />
+
+                <EditText
+                    android:id="@+id/edt_snguoilon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="number"
+                    android:background="@drawable/edittext_background"
+                    android:text="1"
+                    android:padding="12dp"/>
+            </LinearLayout>
+
+            <!-- LinearLayout cho "Trẻ em" -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Trẻ em"
+                    android:textSize="18sp"
+                    android:gravity="center_vertical" />
+
+                <EditText
+                    android:id="@+id/edt_streem"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="number"
+                    android:background="@drawable/edittext_background"
+                    android:text="0"
+                    android:padding="12dp"/>
+            </LinearLayout>
+
+            <!-- Nút tìm kiếm chuyến bay -->
+            <Button
+                android:id="@+id/btn_timchuyen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tìm kiếm"
+                android:backgroundTint="@color/clbutton"
+                android:padding="12dp"
+                android:layout_marginTop="50dp"/>
+
         </LinearLayout>
-
-        <!-- LinearLayout cho "Trẻ em" -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="16dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Trẻ em"
-                android:textSize="18sp"
-                android:gravity="center_vertical" />
-
-            <EditText
-                android:id="@+id/edt_streem"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:inputType="number"
-                android:background="@drawable/edittext_background"
-                android:text="0"
-                android:padding="12dp"/>
-        </LinearLayout>
-
-        <!-- Nút tìm kiếm chuyến bay -->
-        <Button
-            android:id="@+id/btn_timchuyen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tìm kiếm"
-            android:backgroundTint="@color/clbutton"
-            android:padding="12dp"
-            android:layout_marginTop="50dp"/>
 
     </LinearLayout>
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_gravity = "start">
+
+        <include layout="@layout/toolbar" />
+    </RelativeLayout>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
