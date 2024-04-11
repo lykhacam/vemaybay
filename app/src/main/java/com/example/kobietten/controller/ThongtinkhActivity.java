@@ -18,6 +18,8 @@ import com.example.kobietten.model.KhachHang;
 
 import java.util.Calendar;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ThongtinkhActivity extends Activity {
     private LinearLayout llNoidungNl, llNoidungTe;
@@ -39,6 +41,7 @@ public class ThongtinkhActivity extends Activity {
         // Nhận số lượng người lớn và trẻ em từ Intent
         Intent intent = getIntent();
         String diemDi = intent.getStringExtra("EXTRA_DIEMDI");
+        String email = intent.getStringExtra("EXTRA_EMAIL");
         String diemDen = intent.getStringExtra("EXTRA_DIEMDEN");
         String ngayDi = intent.getStringExtra("EXTRA_NGAYDI");
         int numAdults = intent.getIntExtra("EXTRA_ADULTS", 1);
@@ -48,14 +51,15 @@ public class ThongtinkhActivity extends Activity {
         addPassengerViews(numAdults, llNoidungNl, true); // true cho người lớn
         addPassengerViews(numChildren, llNoidungTe, false);
 
-
+//    set cứng email
+        etEmail.setText(email);
         btnTieptuc.setOnClickListener(v -> {
-            if (validateAllPassengerInfo()) {
+            if (validateAllPassengerInfo() && validatePhone(etDienthoai.getText().toString())) {
                 // Chuyển đến Activity thanh toán nếu thông tin đầy đủ
                  Intent paymentIntent = new Intent(ThongtinkhActivity.this, ThanhtoanActivity.class);
                  paymentIntent.putExtra("PUT_DIEMDI", diemDi);
                  paymentIntent.putExtra("PUT_DIEMDEN", diemDen);
-                 paymentIntent.putExtra("PUT_DIEMDI", ngayDi);
+                 paymentIntent.putExtra("PUT_NGAYDI", ngayDi);
                  paymentIntent.putExtra("PUT_DIENTHOAI", etDienthoai.getText().toString());
                  paymentIntent.putExtra("PUT_EMAIL", etEmail.getText().toString());
                 // Thêm danh sách khách hàng vào Intent
@@ -98,47 +102,56 @@ public class ThongtinkhActivity extends Activity {
     private boolean validateAllPassengerInfo() {
         // Đảm bảo rằng etPhone và etEmail đã được khai báo và liên kết với view
         EditText edtDienthoai = findViewById(R.id.edt_dienthoai);
-        EditText edtEmail = findViewById(R.id.edt_email);
 
         if (edtDienthoai.getText().toString().trim().isEmpty()) {
             edtDienthoai.setError("Số điện thoại không được để trống");
             return false;
         }
 
-        if (edtEmail.getText().toString().trim().isEmpty()) {
-            edtEmail.setError("Email không được để trống");
-            return false;
-        }
-
-
         return validatePassengerInfo(llNoidungNl) && validatePassengerInfo(llNoidungTe);
     }
 
     private boolean validatePassengerInfo(LinearLayout container) {
+        boolean isValid = true; // Giả định tất cả thông tin đều hợp lệ ban đầu
         for (int i = 0; i < container.getChildCount(); i++) {
             View view = container.getChildAt(i);
             EditText edtTen = view.findViewById(R.id.edt_ten);
             Spinner spGioitinh = view.findViewById(R.id.gioitinh);
             EditText edtNgaysinh = view.findViewById(R.id.edt_ngaysinh);
-            String namSinh = extractYear(edtNgaysinh.getText().toString());
+
+            // Kiểm tra tên
             if (edtTen.getText().toString().trim().isEmpty()) {
                 edtTen.setError("Tên không được để trống");
-                return false;
+                isValid = false;
             }
 
+            // Kiểm tra giới tính
             if (spGioitinh.getSelectedItemPosition() == 0) {
-                Toast.makeText(this, "Vui lòng chọn giới tính", Toast.LENGTH_SHORT).show();
-                return false;
+                Toast.makeText(this, "Vui lòng chọn giới tính cho hành khách " + (i + 1), Toast.LENGTH_SHORT).show();
+                isValid = false;
             }
 
+            // Kiểm tra ngày sinh
             if (edtNgaysinh.getText().toString().trim().isEmpty()) {
-                Toast.makeText(this, "Ngày sinh không được để trống", Toast.LENGTH_SHORT).show();
-                return false;
+                Toast.makeText(this, "Ngày sinh không được để trống cho hành khách " + (i + 1), Toast.LENGTH_SHORT).show();
+                isValid = false;
             }
-            danhSachKhachhang.add(new KhachHang(edtTen.getText().toString(),namSinh));
         }
-        return true;
+
+        // Chỉ thêm vào danh sách nếu tất cả thông tin hợp lệ
+        if (isValid) {
+            for (int i = 0; i < container.getChildCount(); i++) {
+                View view = container.getChildAt(i);
+                EditText edtTen = view.findViewById(R.id.edt_ten);
+                EditText edtNgaysinh = view.findViewById(R.id.edt_ngaysinh);
+                String namSinh = extractYear(edtNgaysinh.getText().toString());
+                danhSachKhachhang.add(new KhachHang(edtTen.getText().toString(), namSinh));
+            }
+        }
+
+        return isValid;
     }
+
 
     private void showDatePickerDialog(EditText etDate) {
         final Calendar calendar = Calendar.getInstance();
@@ -160,5 +173,15 @@ public class ThongtinkhActivity extends Activity {
     }
     private String extractYear(String date) {
         return date.substring(0, 4); // Lấy bốn ký tự đầu tiên là năm
+    }
+    private boolean validatePhone(String phone) {
+        String phoneRegex = "^[0-9]{10}$"; // Định dạng số điện thoại 10 chữ số
+        Pattern pattern = Pattern.compile(phoneRegex);
+        Matcher matcher = pattern.matcher(phone);
+        if (!matcher.matches()) {
+            etDienthoai.setError("Số điện thoại không hợp lệ");
+            return false;
+        }
+        return true;
     }
 }

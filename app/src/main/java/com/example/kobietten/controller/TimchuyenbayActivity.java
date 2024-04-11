@@ -7,7 +7,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.kobietten.R;
 import com.example.kobietten.adapter.ChuyenBayAdapter;
-import com.example.kobietten.controller.Fragment.ThongtinveActivity;
+import com.example.kobietten.controller.Fragment.ThongtinveFragment;
 import com.example.kobietten.model.ChuyenBay;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -37,6 +37,7 @@ public class TimchuyenbayActivity extends AppCompatActivity {
         String ngaydi = getIntent().getStringExtra("EXTRA_NGAYDI");
         int nguoilon = getIntent().getIntExtra("EXTRA_NGUOILON", 1);
         int treem = getIntent().getIntExtra("EXTRA_TREEM", 0);
+        String email = getIntent().getStringExtra("EXTRA_EMAIL");
 
         // Thực hiện truy vấn Firebase
         db.collection("chuyenbay")
@@ -60,7 +61,7 @@ public class TimchuyenbayActivity extends AppCompatActivity {
 
         lvFlights.setOnItemClickListener((parent, view, position, id) -> {
             ChuyenBay selectedFlight = flightList.get(position);
-            ThongtinveActivity bottomSheet = ThongtinveActivity.newInstance(selectedFlight, diemdi, diemden, ngaydi, nguoilon, treem);
+            ThongtinveFragment bottomSheet = ThongtinveFragment.newInstance(selectedFlight, diemdi, diemden, ngaydi, nguoilon, treem, email);
             bottomSheet.show(getSupportFragmentManager(), "ThongtinveFragment");
         });
     }

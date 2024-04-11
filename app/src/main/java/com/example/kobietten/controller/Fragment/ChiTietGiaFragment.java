@@ -14,16 +14,17 @@ import com.example.kobietten.controller.ThongtinkhActivity;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.example.kobietten.R;
 
-public class ChitietgiaActivity extends BottomSheetDialogFragment {
+public class ChiTietGiaFragment extends BottomSheetDialogFragment {
 
-    public ChitietgiaActivity() {
+    public ChiTietGiaFragment() {
     }
-    public static ChitietgiaActivity newInstance(int soNguoiLon, int soTreEm, int giaVe) {
-        ChitietgiaActivity fragment = new ChitietgiaActivity();
+    public static ChiTietGiaFragment newInstance(int soNguoiLon, int soTreEm, int giaVe, String email) {
+        ChiTietGiaFragment fragment = new ChiTietGiaFragment();
         Bundle args = new Bundle();
         args.putInt("soNguoiLon", soNguoiLon);
         args.putInt("soTreEm", soTreEm);
         args.putInt("giaVe", giaVe);
+        args.putString("email", email);
         fragment.setArguments(args);
         return fragment;
     }
@@ -38,6 +39,7 @@ public class ChitietgiaActivity extends BottomSheetDialogFragment {
         int soNguoiLon = getArguments().getInt("soNguoiLon");
         int soTreEm = getArguments().getInt("soTreEm");
         int giaVe = getArguments().getInt("giaVe");
+        String email = getArguments().getString("email");
 
         // Cập nhật thông tin chi tiết giá vé
         TextView tvSoNguoiLon = view.findViewById(R.id.tv_nguoilon);
@@ -51,16 +53,18 @@ public class ChitietgiaActivity extends BottomSheetDialogFragment {
         tvTienNL.setText(String.format("%,d đ",soNguoiLon*giaVe));
         tvTienTE.setText(String.format("%,d đ",soTreEm*giaVe));
 
-        int tongTien = (soNguoiLon + soTreEm) * giaVe;
-        tvTongTien.setText(String.format("Tổng tiền: %,d đ", tongTien));
+        int tongtien = (soNguoiLon + soTreEm) * giaVe;
+        tvTongTien.setText(String.format("Tổng tiền: %,d đ", tongtien));
         Button btnDatve = view.findViewById(R.id.btn_datve);
 
 
         btnDatve.setOnClickListener(v -> {
             // Tạo Intent để mở PassengerInfoActivity
             Intent intent = new Intent(getContext(), ThongtinkhActivity.class);
+
             intent.putExtra("EXTRA_ADULTS", soNguoiLon);
             intent.putExtra("EXTRA_CHILDREN", soTreEm);
+            intent.putExtra("EXTRA_EMAIL", email);
             startActivity(intent);
         });
 

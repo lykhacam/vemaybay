@@ -30,7 +30,7 @@
             android:name=".controller.TimchuyenbayActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.Fragment.ThongtinveActivity"
+            android:name=".controller.Fragment.ThongtinveFragment"
             android:exported="false" />
         <activity
             android:name=".controller.DiemdenActivity"

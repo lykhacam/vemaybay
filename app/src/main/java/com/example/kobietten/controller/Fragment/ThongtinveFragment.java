@@ -15,16 +15,17 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.example.kobietten.R;
 import com.example.kobietten.model.ChuyenBay;
 
-public class ThongtinveActivity extends BottomSheetDialogFragment {
+public class ThongtinveFragment extends BottomSheetDialogFragment {
     private static final String ARG_CHUYENBAY = "flight";
     private static final String ARG_DIEMDI = "diemDi";
     private static final String ARG_DIEMDEN = "diemDen";
     private static final String ARG_NGAYDI = "ngayDi";
     private static final String ARG_ADULTS = "soNguoiLon";
     private static final String ARG_CHILDREN = "soTreEm";
+    private static final String ARG_EMAIL = "email";
 
-    public static ThongtinveActivity newInstance(ChuyenBay chuyenBay, String diemDi, String diemDen, String ngayDi, int soNguoiLon, int soTreEm) {
-        ThongtinveActivity fragment = new ThongtinveActivity();
+    public static ThongtinveFragment newInstance(ChuyenBay chuyenBay, String diemDi, String diemDen, String ngayDi, int soNguoiLon, int soTreEm, String email) {
+        ThongtinveFragment fragment = new ThongtinveFragment();
         Bundle args = new Bundle();
         args.putSerializable(ARG_CHUYENBAY, chuyenBay);
         args.putString(ARG_DIEMDI, diemDi);
@@ -32,6 +33,7 @@ public class ThongtinveActivity extends BottomSheetDialogFragment {
         args.putString(ARG_NGAYDI, ngayDi);
         args.putInt(ARG_ADULTS, soNguoiLon);
         args.putInt(ARG_CHILDREN, soTreEm);
+        args.putString(ARG_EMAIL, email);
         fragment.setArguments(args);
         return fragment;
     }
@@ -51,17 +53,18 @@ public class ThongtinveActivity extends BottomSheetDialogFragment {
         ChuyenBay chuyenBay = (ChuyenBay) getArguments().getSerializable(ARG_CHUYENBAY);
         int soNguoiLon = getArguments().getInt(ARG_ADULTS);
         int soTreEm = getArguments().getInt(ARG_CHILDREN);
-
+        String email = getArguments().getString(ARG_EMAIL);
+        int tongtien = (soTreEm+soNguoiLon) * chuyenBay.getTienve();
         if (chuyenBay != null) {
             tvMachuyenbay.setText(chuyenBay.getTenhang());
             tvThoigianbay.setText(String.format("%s - %s", chuyenBay.getBatdau(), chuyenBay.getKetthuc()));
-            tvTongtien.setText(String.format("Tổng: %,d đ", (soTreEm+soNguoiLon) * chuyenBay.getTienve()));
+            tvTongtien.setText(String.format("Tổng: %,d đ", tongtien));
         }
 
         tvChitietgia.setOnClickListener(v -> {
             // Mở ChiTietGiaDialogFragment, với các giá trị số người lớn và trẻ em
-            ChitietgiaActivity chiTietGiaDialog = ChitietgiaActivity.newInstance(soNguoiLon, soTreEm, chuyenBay.getTienve());
-            chiTietGiaDialog.show(getParentFragmentManager(), "ChiTietGiaDialogFragment");
+            ChiTietGiaFragment chiTietGiaDialog = ChiTietGiaFragment.newInstance(soNguoiLon, soTreEm, chuyenBay.getTienve(), email);
+            chiTietGiaDialog.show(getParentFragmentManager(), "ChiTietGiaFragment");
         });
 
         btnDatve.setOnClickListener(v -> {
@@ -72,6 +75,7 @@ public class ThongtinveActivity extends BottomSheetDialogFragment {
             intent.putExtra("EXTRA_NGAYDI", getArguments().getString(ARG_NGAYDI));
             intent.putExtra("EXTRA_ADULTS", soNguoiLon);
             intent.putExtra("EXTRA_CHILDREN", soTreEm);
+            intent.putExtra("EXTRA_EMAIL", getArguments().getString(ARG_EMAIL));
             startActivity(intent);
         });
         return view;
