@@ -6,7 +6,7 @@
     android:id="@+id/toolbar"
     android:padding="15dp"
     android:gravity="center_vertical"
-    android:background="#C14979">
+    android:background="#4EB7E6">
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
