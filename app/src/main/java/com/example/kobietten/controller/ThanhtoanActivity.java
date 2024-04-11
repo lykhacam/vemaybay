@@ -60,6 +60,7 @@ public class ThanhtoanActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     private void thanhToan(String diemDi, String diemDen, String ngayDi, String dienThoai, String email, ArrayList<KhachHang> danhSachKhachHang) {

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.KoBietTen"
         tools:targetApi="31">
         <activity
+            android:name=".controller.CskhActivity"
+            android:exported="false" />
+        <activity
             android:name=".controller.ThanhToan_activity"
             android:exported="false" />
         <activity
@@ -39,7 +42,7 @@
             android:name=".controller.DiemdenActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.ManhinhchinhActivity"
+            android:name=".controller.DangnhapActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,9 +54,8 @@
             android:name=".controller.ThongtinkhActivity"
             android:exported="false" />
         <activity
-            android:name=".controller.DangnhapActivity"
-            android:exported="false" >
-        </activity>
+            android:name=".controller.ManhinhchinhActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

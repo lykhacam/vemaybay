@@ -27,7 +27,7 @@ public class TimchuyenbayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dschuyen);
         lvFlights = findViewById(R.id.listView);
-        tvKochuyen = findViewById(R.id.tv_kochuyen); // Thêm tham chiếu đến TextView mới
+        tvKochuyen = findViewById(R.id.tv_kochuyen); //
         adapter = new ChuyenBayAdapter(this, flightList);
         lvFlights.setAdapter(adapter);
 

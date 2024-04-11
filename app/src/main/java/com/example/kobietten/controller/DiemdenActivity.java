@@ -27,6 +27,7 @@ public class DiemdenActivity extends AppCompatActivity {
 
         listView = findViewById(R.id.listView);
         adapter = new SanBayAdapter(this, listSanBay);
+
         listView.setAdapter(adapter);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();

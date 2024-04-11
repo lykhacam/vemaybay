@@ -48,7 +48,7 @@ public class ThongtinkhActivity extends Activity {
         int numChildren = intent.getIntExtra("EXTRA_CHILDREN", 0);
         danhSachKhachhang = new ArrayList<>();
         // Thêm view động cho người lớn và trẻ em dựa trên số lượng
-        addPassengerViews(numAdults, llNoidungNl, true); // true cho người lớn
+        addPassengerViews(numAdults, llNoidungNl, true);
         addPassengerViews(numChildren, llNoidungTe, false);
 
 //    set cứng email

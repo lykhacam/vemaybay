@@ -37,6 +37,7 @@ public class DiemdiActivity extends AppCompatActivity {
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             SanBay sanBay = document.toObject(SanBay.class);
                             listSanBay.add(sanBay);
+
                         }
                         adapter.notifyDataSetChanged();
                     } else {
