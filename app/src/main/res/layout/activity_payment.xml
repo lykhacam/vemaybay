@@ -115,35 +115,6 @@
 
 
       </LinearLayout>
-      <View
-          android:layout_marginTop="5dp"
-          android:background="@android:color/darker_gray"
-          android:layout_width="match_parent"
-          android:layout_height="1dp"/>
-      <LinearLayout
-          android:padding="5dp"
-          android:orientation="horizontal"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content">
-
-        <ImageView
-            android:layout_width="52dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/calendar" />
-        <TextView
-            android:id="@+id/tvDepartureTime"
-            android:text="12/04/2024"
-            android:textSize="15sp"
-            android:layout_gravity="center"
-            android:textColor="@android:color/holo_red_light"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-
-      </LinearLayout>
 
     </LinearLayout>
   </androidx.cardview.widget.CardView>
