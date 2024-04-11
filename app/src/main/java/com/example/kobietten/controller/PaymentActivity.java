@@ -21,6 +21,8 @@ public class PaymentActivity extends AppCompatActivity {
     // Khai báo DatabaseReference
     private DatabaseReference mDatabase;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

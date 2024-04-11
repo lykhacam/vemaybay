@@ -17,16 +17,25 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import android.os.Bundle;
 import android.widget.Toolbar;
+import com.example.kobietten.model.KhachHang;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import com.example.kobietten.R;
 
 public class ThanhToan_activity extends AppCompatActivity {
+
+    private DatabaseReference mDatabase;
+    TextView tvTongtien;
+    //AppCompaButton btnThanhToan;
+    long tongtien;
+    int totalItem;
     Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_thanh_toan);
+        setContentView(R.layout.activity_thanhtoan);
         initView();
         //countItem();
         //initControl();
