@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.ThanhToan_activity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Thanh toán"
+        android:background="@drawable/background_gradient"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"/>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        app:cardCornerRadius="4dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:elevation="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:padding="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="26dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/money2" />
+                <TextView
+                    android:id="@+id/tvTongtien"
+                    android:text="1930000"
+                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <View
+                android:layout_marginTop="5dp"
+                android:background="@android:color/darker_gray"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+            <LinearLayout
+                android:padding="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="19dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_logo" />
+                <TextView
+                    android:id="@+id/tvFlightName"
+                    android:text="VietnamAirline"
+                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+            <View
+                android:layout_marginTop="5dp"
+                android:background="@android:color/darker_gray"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+            <LinearLayout
+                android:padding="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="53dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/plane" />
+                <TextView
+                    android:id="@+id/tvFlightNumber"
+                    android:text="NNS24"
+                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_marginTop="5dp"
+                android:background="@android:color/darker_gray"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+            <LinearLayout
+                android:padding="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="54dp"
+                    android:layout_height="23dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/user2" />
+                <TextView
+                    android:id="@+id/tvUsername"
+                    android:text="Hoang Duc Dung"
+                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+            <View
+                android:layout_marginTop="5dp"
+                android:background="@android:color/darker_gray"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+            <LinearLayout
+                android:padding="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="52dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/calendar" />
+                <TextView
+                    android:id="@+id/tvDepartureTime"
+                    android:text="12/04/2024"
+                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+            <View
+                android:layout_marginTop="5dp"
+                android:background="@android:color/darker_gray"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+            <LinearLayout
+                android:padding="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="21dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/time2" />
+                <TextView
+                    android:id="@+id/tvFlightTimes"
+                    android:text="15:50-17:25"
+                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnthanhtoan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="132dp"
+        android:background="@drawable/border_button"
+        android:text="Thanh toán"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/cardview"
+        tools:layout_editor_absoluteX="5dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
