@@ -42,12 +42,10 @@ public class ThanhtoanActivity extends AppCompatActivity {
         TextView tvFlightName = findViewById(R.id.tvFlightName);
         TextView tvFlightNumber = findViewById(R.id.tvFlightNumber);
         TextView tvUsername = findViewById(R.id.tvUsername);
-        TextView tvDepartureTime = findViewById(R.id.tvDepartureTime);
 
         tvFlightName.setText("VietnameAirline");
         tvFlightNumber.setText("VNA");
         tvUsername.setText(email);
-        tvDepartureTime.setText(ngayDi);
 
 
         // Xử lý sự kiện nhấn nút thanh toán
