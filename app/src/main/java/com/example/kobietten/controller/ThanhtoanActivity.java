@@ -48,11 +48,11 @@ public class ThanhtoanActivity extends AppCompatActivity {
 
         // Tạo cấu trúc lưu trữ dữ liệu
         Map<String, Object> bookingData = new HashMap<>();
+        bookingData.put("Ngày/Ngày đi", ngayDi);
         bookingData.put("Liên hệ/Số điện thoại", dienThoai);
         bookingData.put("Liên hệ/Email", email);
         bookingData.put("Chuyến bay/Điểm đi", diemDi);
         bookingData.put("Chuyến bay/Điểm đến", diemDen);
-        bookingData.put("Ngày đi", ngayDi);
 
         // Lặp qua danh sách khách hàng và thêm vào bookingData
         Map<String, Object> customerData = new HashMap<>();
