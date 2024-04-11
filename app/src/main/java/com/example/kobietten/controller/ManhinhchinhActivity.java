@@ -9,9 +9,12 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.kobietten.R;
 
@@ -22,10 +25,12 @@ public class ManhinhchinhActivity extends AppCompatActivity {
     private Button btnDiemdi;
     private Button btnDiemden;
     private Button btnChonngay, btnTimchuyen;
+    DrawerLayout drawerLayout;
     private String email;
     private static final int REQUEST_DIEMDI = 1;
     private static final int REQUEST_DIEMDEN = 2;
     private EditText edtSnl, edtSte;
+    ImageView ivBars;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +43,21 @@ public class ManhinhchinhActivity extends AppCompatActivity {
         edtSnl = findViewById(R.id.edt_snguoilon);
         edtSte = findViewById(R.id.edt_streem);
         btnTimchuyen = findViewById(R.id.btn_timchuyen);
+        drawerLayout = findViewById(R.id.drawlayout);
+        ivBars = findViewById(R.id.ivBars);
+
+
+
 
         Intent intent = getIntent();
         email = intent.getStringExtra("EXTRA_EMAIL");
+
+        ivBars.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDrawer(drawerLayout);
+            }
+        });
 
         // Xử lý nhấn nút Điểm đi
         btnDiemdi.setOnClickListener(v -> openDiemdiActivity());
@@ -53,6 +70,16 @@ public class ManhinhchinhActivity extends AppCompatActivity {
 
         // Xử lý nhấn nút Tìm kiếm
         btnTimchuyen.setOnClickListener(view -> searchFlights(view));
+    }
+
+    public static void openDrawer(DrawerLayout drawerLayout) {
+        drawerLayout.openDrawer(GravityCompat.START);
+    }
+
+    public static void closeDrawer(DrawerLayout drawerLayout) {
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
     }
 
 
