@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +25,7 @@ import com.example.kobietten.R;
 import java.util.Calendar;
 
 public class ManhinhchinhActivity extends AppCompatActivity {
-    LinearLayout lncskh,lncsvbm,lndangxuat;
+    LinearLayout lncskh,lncsvbm,lndangxuat,lnhome;
     private Button btnDiemdi;
     private Button btnDiemden;
     private Button btnChonngay, btnTimchuyen;
@@ -51,17 +52,25 @@ public class ManhinhchinhActivity extends AppCompatActivity {
         lncskh = findViewById(R.id.lncskh);
         lncsvbm = findViewById(R.id.lncsvbm);
         lndangxuat = findViewById(R.id.lndangxuat);
+        lnhome = findViewById(R.id.lnhome);
+        TextView tvemail = findViewById(R.id.tvUsername);
 
 
 
 
         Intent intent = getIntent();
         email = intent.getStringExtra("EXTRA_EMAIL");
-
+        tvemail.setText(email);
         ivBars.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openDrawer(drawerLayout);
+            }
+        });
+        lnhome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                closeDrawer(drawerLayout);
             }
         });
 

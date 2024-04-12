@@ -3,14 +3,36 @@
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="bottom" android:padding="15dp" style="@style/Backgroud" android:theme="@style/ThemeOverlay.AppCompat.Dark">
             <ImageView android:layout_width="60dp" android:layout_height="60dp" android:src="@drawable/ic_prf"/>
             <TextView android:id="@+id/tvUsername" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.5sp" android:text="Tên người dùng" android:textStyle="bold" style="@style/TextColorMenu1" android:textSize="20sp"/>
-            <TextView android:id="@+id/tvEmail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.5sp" android:text="Địa chỉ email" android:textSize="15sp" style="@style/TextColorMenu1"/>
         </LinearLayout>
 
         <LinearLayout
             style="@style/BackgroudMenu"
             android:layout_width="match_parent"
             android:layout_height="667dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:id="@+id/lnhome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10sp"
+                    android:src="@drawable/home" />
+
+                <TextView
+                    style="@style/TextColorMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trang chủ đặt vé"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/lncsvbm"
@@ -19,6 +41,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
                 android:orientation="vertical">
+
 
                 <LinearLayout
                     android:layout_width="wrap_content"

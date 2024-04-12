@@ -28,7 +28,7 @@ import com.example.kobietten.R;
 
 public class HotroActivity extends AppCompatActivity {
     TextView call,sms,tvsdt;
-    LinearLayout lncskh,lncsvbm,lndangxuat;
+    LinearLayout lncskh,lncsvbm,lndangxuat,lnhome;
     ImageView ivBars;
     DrawerLayout drawerLayout;
     ImageView ivmap;
@@ -48,6 +48,7 @@ public class HotroActivity extends AppCompatActivity {
         lncskh = findViewById(R.id.lncskh);
         lncsvbm = findViewById(R.id.lncsvbm);
         lndangxuat = findViewById(R.id.lndangxuat);
+        lnhome = findViewById(R.id.lnhome);
 
 
         ivBars.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +67,13 @@ public class HotroActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HotroActivity.this,ChinhsachActivity.class);
+                startActivity(intent);
+            }
+        });
+        lnhome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HotroActivity.this,ManhinhchinhActivity.class);
                 startActivity(intent);
             }
         });
@@ -113,9 +121,13 @@ public class HotroActivity extends AppCompatActivity {
         call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String sdt = tvsdt.getText().toString();
-                Intent intent_call = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+sdt));
-                startActivity(intent_call);
+                if (ActivityCompat.checkSelfPermission(HotroActivity.this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                    String sdt = tvsdt.getText().toString();
+                    Intent intent_call = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + sdt));
+                    startActivity(intent_call);
+                } else {
+                    ActivityCompat.requestPermissions(HotroActivity.this, new String[]{Manifest.permission.CALL_PHONE}, REQUEST_PHONE_CALL);
+                }
             }
         });
 

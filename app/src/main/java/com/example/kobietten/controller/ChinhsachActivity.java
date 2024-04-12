@@ -20,7 +20,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.kobietten.R;
 
 public class ChinhsachActivity extends AppCompatActivity {
-    LinearLayout lncskh,lncsvbm,lndangxuat;
+    LinearLayout lncskh,lncsvbm,lndangxuat,lnhome;
     ImageView ivBars;
     DrawerLayout drawerLayout;
     private Button btnDiemdi;
@@ -34,6 +34,7 @@ public class ChinhsachActivity extends AppCompatActivity {
         lncskh = findViewById(R.id.lncskh);
         lncsvbm = findViewById(R.id.lncsvbm);
         lndangxuat = findViewById(R.id.lndangxuat);
+        lnhome = findViewById(R.id.lnhome);
 
 
 
@@ -47,6 +48,13 @@ public class ChinhsachActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ChinhsachActivity.this,HotroActivity.class);
+                startActivity(intent);
+            }
+        });
+        lnhome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChinhsachActivity.this,ManhinhchinhActivity.class);
                 startActivity(intent);
             }
         });
