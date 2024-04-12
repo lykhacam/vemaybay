@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +22,7 @@ public class DangnhapActivity extends AppCompatActivity {
     private EditText  edtEmail, edtMatkhau;
     private Button btnDangnhap;
     private FirebaseAuth firebaseAuth;
+    CheckBox cbnhomk;
     private TextView txtDangky, txtquenmk;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

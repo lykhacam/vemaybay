@@ -11,6 +11,7 @@
     <style name="Backgroudsetcard"><item name="android:textColor">@color/black</item></style>
     <style name="BackgroudMenu"><item name="android:background">@color/pink0</item></style>
     <style name="Backgroud"><item name="android:background">@color/white</item></style>
+    <style name="BackgroudInit"><item name="android:backgroundTint">@color/white</item></style>
 ss
 
     <style name="TextColorHint"><item name="android:textColor">@color/black</item><item name="android:textColorHint">@color/gray</item></style>

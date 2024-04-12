@@ -1,104 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        style="@style/Backgroud"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="bottom"
-            android:padding="15dp"
-            style="@style/Backgroud"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark">
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/ic_prf"
-                ></ImageView>
-
-            <TextView
-                android:id="@+id/tvUsername"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7.5sp"
-                android:text="Tên người dùng"
-                android:textStyle="bold"
-                style="@style/TextColorMenu1"
-                android:textSize="20sp"/>
-
-            <TextView
-                android:id="@+id/tvEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7.5sp"
-                android:text="Địa chỉ email"
-                android:textSize="15sp"
-                style="@style/TextColorMenu1" />
-
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" style="@style/Backgroud" android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="bottom" android:padding="15dp" style="@style/Backgroud" android:theme="@style/ThemeOverlay.AppCompat.Dark">
+            <ImageView android:layout_width="60dp" android:layout_height="60dp" android:src="@drawable/ic_prf"/>
+            <TextView android:id="@+id/tvUsername" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.5sp" android:text="Tên người dùng" android:textStyle="bold" style="@style/TextColorMenu1" android:textSize="20sp"/>
         </LinearLayout>
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="vertical"-->
-<!--            android:gravity="bottom"-->
-<!--            android:padding="15dp"-->
-<!--            style="@style/Backgroud"-->
-<!--            android:theme="@style/ThemeOverlay.AppCompat.Dark">-->
-
-<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content">-->
-<!--                <de.hdodenhof.circleimageview.CircleImageView-->
-<!--                    android:layout_height="60dp"-->
-<!--                    android:layout_width="60dp"-->
-<!--                    android:id="@+id/ivProfilePicture"-->
-<!--                    android:background="@color/white"-->
-<!--                    android:src="@drawable/user_profile_picture"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent" />-->
-<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/tvUsername"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="7.5sp"-->
-<!--                android:text="Tên người dùng"-->
-<!--                android:textStyle="bold"-->
-<!--                style="@style/TextColorMenu1"-->
-<!--                android:textSize="20sp"/>-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/tvEmail"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="7.5sp"-->
-<!--                android:text="Địa chỉ email"-->
-<!--                android:textSize="15sp"-->
-<!--                style="@style/TextColorMenu1" />-->
-
-<!--        </LinearLayout>-->
-
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             style="@style/BackgroudMenu"
-            android:orientation="vertical">
-
-
+            android:layout_width="match_parent"
+            android:layout_height="667dp"
+            android:orientation="vertical"
+            >
             <LinearLayout
-                android:id="@+id/lndatve"
+                android:id="@+id/lnhome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -109,53 +23,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10sp"
-                    android:src="@drawable/airplane" />
+                    android:src="@drawable/home" />
 
                 <TextView
                     style="@style/TextColorMenu"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="đặt vé"
+                    android:layout_height="wrap_content"
+                    android:text="Trang chủ đặt vé"
                     android:textSize="15sp"
                     android:textStyle="bold" />
-
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lnCreate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10sp"
-                    android:src="@drawable/history" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="Lịch Sử đặt vé"
-                    style="@style/TextColorMenu"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/lnEditFlashcardSets"
+                android:id="@+id/lncsvbm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
                 android:orientation="vertical">
+
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -176,15 +62,14 @@
                         android:text="Chính Sách và bảo mật"
                         android:textSize="15sp"
                         android:textStyle="bold" />
-
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/lnSubItem"
-                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical" >
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:id="@+id/lnAdd"
@@ -201,15 +86,14 @@
                             android:src="@drawable/home" />
 
                         <TextView
+                            style="@style/TextColorMenu"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:text="string/nav_add_card"
-                            style="@style/TextColorMenu"
                             android:textSize="15sp"
                             android:textStyle="bold" />
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -227,15 +111,14 @@
                             android:src="@drawable/home" />
 
                         <TextView
+                            style="@style/TextColorMenu"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:text="string/nav_edit_card"
-                            style="@style/TextColorMenu"
                             android:textSize="15sp"
                             android:textStyle="bold" />
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -253,15 +136,14 @@
                             android:src="@drawable/home" />
 
                         <TextView
+                            style="@style/TextColorMenu"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:text="string/nav_delete_card"
-                            style="@style/TextColorMenu"
                             android:textSize="15sp"
                             android:textStyle="bold" />
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -279,13 +161,12 @@
                             android:src="@drawable/home" />
 
                         <TextView
+                            style="@style/TextColorMenu"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="string/nav_rename_set_card"
-                            style="@style/TextColorMenu"
                             android:textSize="15sp"
                             android:textStyle="bold" />
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -303,22 +184,18 @@
                             android:src="@drawable/home" />
 
                         <TextView
+                            style="@style/TextColorMenu"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="string/nav_delete_set_card"
-                            style="@style/TextColorMenu"
                             android:textSize="15sp"
                             android:textStyle="bold" />
-
                     </LinearLayout>
-
                 </LinearLayout>
-
             </LinearLayout>
 
             <LinearLayout
-
-                android:id="@+id/lnSetting"
+                android:id="@+id/lncskh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -332,20 +209,18 @@
                     android:src="@drawable/ic_takecare" />
 
                 <TextView
+                    style="@style/TextColorMenu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="Chăm sóc khách hàng"
-                    style="@style/TextColorMenu"
                     android:textSize="15sp"
                     android:textStyle="bold" />
-
             </LinearLayout>
 
             <LinearLayout
-
-                android:id="@+id/lnSearch"
+                android:id="@+id/lndangxuat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -359,49 +234,39 @@
                     android:src="@drawable/exit" />
 
                 <TextView
+                    style="@style/TextColorMenu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Đăng Xuất"
-                    style="@style/TextColorMenu"
                     android:textSize="15sp"
                     android:textStyle="bold" />
-
             </LinearLayout>
-
-
-            <!--            <LinearLayout-->
-
-            <!--                android:id="@+id/lnSearchUser"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_marginStart="15dp"-->
-            <!--                android:layout_marginTop="15dp"-->
-            <!--                android:orientation="horizontal">-->
-
-            <!--                <ImageView-->
-            <!--                    android:layout_width="wrap_content"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:layout_marginRight="10sp"-->
-            <!--                    android:src="@drawable/ic_person" />-->
-
-            <!--                <TextView-->
-            <!--                    android:layout_width="wrap_content"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:layout_gravity="center"-->
-            <!--                    android:gravity="center"-->
-            <!--                    android:text="Tìm kiếm người dùng"-->
-            <!--                    style="@style/TextColorMenu"-->
-            <!--                    android:textSize="15sp"-->
-            <!--                    android:textStyle="bold" />-->
-
-            <!--            </LinearLayout>-->
-
+            <!--             <LinearLayout -->
+            <!--                 android:id="@+id/lnSearchUser" -->
+            <!--                 android:layout_width="wrap_content" -->
+            <!--                 android:layout_height="wrap_content" -->
+            <!--                 android:layout_marginStart="15dp" -->
+            <!--                 android:layout_marginTop="15dp" -->
+            <!--                 android:orientation="horizontal"> -->
+            <!--                 <ImageView -->
+            <!--                     android:layout_width="wrap_content" -->
+            <!--                     android:layout_height="wrap_content" -->
+            <!--                     android:layout_marginRight="10sp" -->
+            <!--                     android:src="@drawable/ic_person" /> -->
+            <!--                 <TextView -->
+            <!--                     android:layout_width="wrap_content" -->
+            <!--                     android:layout_height="wrap_content" -->
+            <!--                     android:layout_gravity="center" -->
+            <!--                     android:gravity="center" -->
+            <!--                     android:text="Tìm kiếm người dùng" -->
+            <!--                     style="@style/TextColorMenu" -->
+            <!--                     android:textSize="15sp" -->
+            <!--                     android:textStyle="bold" /> -->
+            <!--             </LinearLayout> -->
         </LinearLayout>
-
-        <!--        <LinearLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="140dp">-->
-        <!--        </LinearLayout>-->
-
+        <!--         <LinearLayout -->
+        <!--             android:layout_width="match_parent" -->
+        <!--             android:layout_height="140dp"> -->
+        <!--         </LinearLayout> -->
     </LinearLayout>
 </ScrollView>
